@@ -1,0 +1,20 @@
+# Core
+numpy
+pandas
+tqdm
+pillow
+matplotlib
+
+# AI & Vision
+torch>=2.0.0
+torchvision
+ultralytics>=8.3.0  # Required for YOLOE
+openai>=1.0.0       # Client for LM Studio
+
+# Dataset
+nuscenes-devkit
+
+# Interactive Notebooks
+ipykernel
+ipywidgets
+jupyterlab

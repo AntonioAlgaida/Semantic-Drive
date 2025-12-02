@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Environments
+.env
+.venv
+env/
+venv/
+
+# Project Outputs (Big Data)
+output/*.jsonl
+output/*.json
+output/logs_*/
+
+# IDEs
+.vscode/
+.idea/
+.history/
+
+# Large Models (if you downloaded .pt files locally)
+*.pt
+*.gguf
+*.bin
+
+# Datasets (Just in case)
+data/sets/
+
+debug_images/
+mobileclip_blt.ts
+yoloe-11l-seg.pt
+notebooks/mobileclip_blt.ts
+notebooks/yoloe-11l-seg.pt
