@@ -11,19 +11,16 @@ import time
 
 # Configuration for Local Inference
 # Ensure LM Studio is running specifically on this port
-LM_STUDIO_URL = "http://192.168.1.67:1234/v1"
+# LM_STUDIO_URL = "http://192.168.1.67:1234/v1"
 API_KEY = "lm-studio" # Placeholder, not used locally usually
 
 class VLMClient:
-    def __init__(self, model_id="qwen3-vl-instruct"):
-        """
-        Initialize the client pointing to local LM Studio.
-        :param model_id: The exact name of the model loaded in LM Studio.
-                         You can often just use "local-model" if only one is loaded.
-        """
-        self.client = OpenAI(base_url=LM_STUDIO_URL, api_key=API_KEY)
+    def __init__(self, model_id="qwen3-vl-30b", port=1234):
+        # Allow dynamic port assignment
+        base_url = f"http://localhost:{port}/v1"
+        self.client = OpenAI(base_url=base_url, api_key="lm-studio")
         self.model_id = model_id
-        print(f"VLM Client initialized. Target: {LM_STUDIO_URL} | Model: {model_id}")
+        print(f"✅ VLM Client connected to Port {port}")
 
     def _encode_image(self, pil_image):
         """
@@ -119,23 +116,28 @@ class VLMClient:
 
     def _extract_reasoning(self, raw_text):
         """
-        Extracts the text inside thinking tags. Returns None if not found.
+        Extracts the text inside thinking tags.
+        Fallback: Returns the entire raw text if no tags are found.
         """
+        
+        print("🔍 Extracting reasoning trace from response...")
+        print(f" Raw text: {raw_text}")
         # Supports both DeepSeek/Kimi style tags
         start_patterns = ["◁think▷", "<think>"]
         end_patterns = ["◁/think▷", "</think>"]
         
         start_idx = -1
-        used_start_tag = ""
         
         for tag in start_patterns:
             if tag in raw_text:
                 start_idx = raw_text.find(tag) + len(tag)
-                used_start_tag = tag
                 break
         
+        # --- MODIFICATION START ---
+        # If no start tag is found, return the whole text (Fallback)
         if start_idx == -1:
-            return None
+            return raw_text.strip()
+        # --- MODIFICATION END ---
 
         # Find closing tag
         end_idx = -1
@@ -144,7 +146,7 @@ class VLMClient:
                 end_idx = raw_text.find(tag)
                 break
         
-        # If closing tag missing, grab everything until JSON starts
+        # If closing tag missing, grab everything until JSON starts or end of string
         if end_idx == -1:
             code_start = raw_text.find("```")
             if code_start != -1:
@@ -199,13 +201,13 @@ class VLMClient:
                 model=self.model_id,
                 messages=messages,
                 temperature=0.1,
-                max_tokens=8192
+                max_tokens=16384
             )
             raw = response.choices[0].message.content
             result_pkg["raw_response"] = raw
 
             # Extract Components
-            reasoning = self._extract_reasoning(raw)
+            reasoning =  response.choices[0].message.model_extra.get('reasoning_content') or None
             json_str = self._extract_json(raw)
             
             result_pkg["reasoning_trace"] = reasoning

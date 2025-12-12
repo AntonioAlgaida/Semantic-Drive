@@ -2,140 +2,158 @@
 import json
 import os
 import argparse
-import time
+import re
 from tqdm import tqdm
 from openai import OpenAI
+from src.reward import SymbolicVerifier
 
-# CONFIGURATION
-# ---------------------------------------------------------
-# Recommendation: Use GPT-4o or Claude-3.5-Sonnet for the Judge.
-# If local, use a LARGE model (70B+), otherwise the Judge is 
-# no smarter than the Scouts.
-JUDGE_API_URL = "https://api.openai.com/v1" 
-JUDGE_API_KEY = os.getenv("OPENAI_API_KEY") 
-JUDGE_MODEL = "gpt-4o" 
-# ---------------------------------------------------------
+# IMPORT THE SCHEMA DEFINITIONS
+# This ensures the Judge knows the allowed Enums (e.g., "jaywalking_hesitant")
+from src.model.prompts import SCHEMA_GUIDE, OUTPUT_SKELETON
+
+# --- CONFIGURATION ---
+JUDGE_API_URL = "http://localhost:1234/v1" 
+JUDGE_API_KEY = "lm-studio"
+JUDGE_MODEL_ID = "local-model"
 
 client = OpenAI(base_url=JUDGE_API_URL, api_key=JUDGE_API_KEY)
 
-SYSTEM_PROMPT_JUDGE = """
-You are the **Chief Safety Officer** (The Judge) for an Autonomous Vehicle Dataset Curation project.
-You are reviewing conflict reports from multiple AI Scouts (e.g., Kimi, Qwen) regarding the same driving scene.
+# --- SYSTEM PROMPT (Enforcing Uniformity) ---
+SYSTEM_PROMPT = f"""
+You are the **Chief Safety Officer** (The Judge) for an Autonomous Vehicle Data Mining system.
+You have reports from 3 AI Scouts regarding a driving scene.
 
-### YOUR OBJECTIVE
-Synthesize a single **"Ground Truth" JSON** for the scene.
+### YOUR GOAL
+Synthesize a single **"Ground Truth" JSON** that resolves conflicts between scouts.
 
-### CONFLICT RESOLUTION RULES
-1. **Safety Bias:** If ANY scout detects a High-Risk element (Pedestrian, Red Light, Construction) and provides valid reasoning, **mark it as TRUE**. Better to have a False Positive in a dataset than to miss a fatality.
-2. **Hallucination Check:** If a scout detects something bizarre (e.g., "Elephant") with weak reasoning, and others disagree, **reject it**.
-3. **YOLO Authority:** Use the provided YOLO Object Inventory as the tie-breaker for object existence.
-4. **Waymo Taxonomy:** Ensure tags match the WOD-E2E categories (Construction, VRU, FOD, Weather).
+### RULES OF EVIDENCE
+1. **Trust Grounding:** If YOLO detects an object, favor scouts that confirm it visually.
+2. **Safety Bias:** In ambiguity, err on the side of caution (Higher Risk).
+3. **Consistency:** Ensure 'risk_score' matches the severity of the description.
 
-### OUTPUT FORMAT
-Return ONLY the consolidated JSON object.
+### SCHEMA ENFORCEMENT
+You MUST output the JSON following this EXACT schema and vocabulary:
+{SCHEMA_GUIDE}
+
+{OUTPUT_SKELETON}
+
+### OUTPUT
+Return ONLY the final JSON object. Do not include markdown or reasoning text outside the JSON.
 """
 
-def load_jsonl_map(filename):
-    """Loads a JSONL file into a Dict {token: data}."""
-    data_map = {}
-    if not os.path.exists(filename):
-        print(f"⚠️ Warning: File not found {filename}")
-        return data_map
-        
-    print(f"Loading {filename}...")
-    with open(filename, 'r') as f:
-        for line in f:
-            try:
-                item = json.loads(line)
-                if 'token' in item:
-                    data_map[item['token']] = item
-            except: pass
-    return data_map
+def clean_json_string(content):
+    """Robust cleaner for Local LLM outputs"""
+    if "```" in content:
+        pattern = r"```(?:json)?\s*(.*?)\s*```"
+        match = re.search(pattern, content, re.DOTALL)
+        if match:
+            content = match.group(1)
+    return content.strip()
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--files", nargs='+', required=True, help="List of index files (e.g. output/index_kimi.jsonl output/index_qwen.jsonl)")
-    parser.add_argument("--output", type=str, default="consensus_dataset.jsonl", help="Filename for the final dataset")
+    parser.add_argument("--files", nargs='+', required=True, help="Input jsonl files")
+    parser.add_argument("--output", type=str, default="output/consensus_final.jsonl")
+    parser.add_argument("--n", type=int, default=3, help="Best-of-N attempts")
     args = parser.parse_args()
 
-    # 1. Load Data
-    scout_maps = [load_jsonl_map(f) for f in args.files]
+    # ... [Rest of the file remains the same] ...
+    # (Load Data logic...)
     
-    # Get all unique tokens (intersection or union? Union is safer)
-    all_tokens = set().union(*[d.keys() for d in scout_maps])
-    print(f"👨‍⚖️ The Judge is ready. Processing {len(all_tokens)} unique frames.")
-
-    # 2. Setup Output
-    output_path = os.path.join("output", args.output)
-    processed_tokens = set()
-    
-    # Resume logic
-    if os.path.exists(output_path):
-        with open(output_path, 'r') as f:
-            for line in f:
-                try: processed_tokens.add(json.loads(line)['token'])
+    # Intersection of tokens
+    data_maps = []
+    print(f"📂 Loading {len(args.files)} scout files...")
+    for f in args.files:
+        d = {}
+        with open(f, 'r') as file:
+            for line in file:
+                try:
+                    obj = json.loads(line)
+                    if obj.get('success'): 
+                        d[obj['token']] = obj
                 except: pass
-        print(f"Resuming... {len(processed_tokens)} already judged.")
+        data_maps.append(d)
 
-    # 3. Judgment Loop
-    with open(output_path, 'a') as f_out:
+    all_tokens = set().union(*[d.keys() for d in data_maps])
+    verifier = SymbolicVerifier()
+    
+    print(f"👨‍⚖️ Judge initialized. Processing {len(all_tokens)} frames...")
+
+    with open(args.output, 'w') as f_out:
         for token in tqdm(all_tokens):
-            if token in processed_tokens: continue
-
-            # Gather Reports
-            reports = []
-            yolo_context = "Not Available"
             
-            for i, scout_map in enumerate(scout_maps):
-                if token in scout_map:
-                    data = scout_map[token]
-                    model_name = data.get('model_source', f'Scout_{i}')
-                    trace = data.get('_reasoning_trace', 'No trace')
+            # 1. Aggregate Reports
+            reports = []
+            yolo_context = "No YOLO Data"
+            
+            for i, d in enumerate(data_maps):
+                if token in d:
+                    item = d[token]
+                    if yolo_context == "No YOLO Data" and "yolo_inventory" in item:
+                        yolo_context = item["yolo_inventory"]
                     
-                    # Clean up data for prompt (remove large fields)
-                    clean_data = {k:v for k,v in data.items() if k not in ['token', '_reasoning_trace', 'model_source']}
+                    # Clean the item for the prompt (remove bulky fields)
+                    # We remove _reasoning_trace from the JSON dump because we pass it separately or summarize it
+                    clean_obj = {k:v for k,v in item.items() if k not in ['token', '_reasoning_trace', 'yolo_inventory', 'raw_response', 'input_messages_log', 'usage']}
                     
-                    report = f"--- REPORT FROM {model_name.upper()} ---\n"
-                    report += f"JSON: {json.dumps(clean_data)}\n"
-                    report += f"REASONING: {trace}\n"
-                    reports.append(report)
+                    # Get trace
+                    trace = item.get('_reasoning_trace', 'No trace')[:500] 
                     
-                    # Try to grab YOLO inventory from one of them (they should be similar)
-                    # Note: We need to pass YOLO inventory in index file if we want it here.
-                    # Currently it is in the LOGS file, but the VLM Reasoning usually references it.
+                    reports.append(f"--- SCOUT {i+1} ---\n[Trace]: {trace}...\n[JSON]: {json.dumps(clean_obj)}")
 
-            if len(reports) == 0: continue
+            if not reports: continue
 
-            # Construct the Case File
-            user_content = f"### CASE FILE: Frame {token}\n\n"
-            user_content += "\n".join(reports)
-            user_content += "\n\n### INSTRUCTION\nCompare the reports above. Produce the FINAL CONSENSUS JSON."
+            # 2. Construct Prompt
+            user_content = f"### SYMBOLIC GROUNDING (YOLO):\n{yolo_context}\n\n"
+            user_content += "### SCOUT REPORTS:\n" + "\n\n".join(reports)
+            user_content += "\n\nSynthesize the Consensus JSON."
 
-            # Call The Judge
-            try:
-                response = client.chat.completions.create(
-                    model=JUDGE_MODEL,
-                    messages=[
-                        {"role": "system", "content": SYSTEM_PROMPT_JUDGE},
-                        {"role": "user", "content": user_content}
-                    ],
-                    temperature=0.0, # Deterministic
-                    response_format={"type": "json_object"}
-                )
-                
-                final_json = json.loads(response.choices[0].message.content)
-                final_json['token'] = token
-                final_json['consensus_source_count'] = len(reports)
-                
-                f_out.write(json.dumps(final_json) + "\n")
-                f_out.flush()
+            # 3. Best-of-N Loop
+            candidates = []
+            for attempt in range(args.n):
+                try:
+                    response = client.chat.completions.create(
+                        model=JUDGE_MODEL_ID,
+                        messages=[
+                            {"role": "system", "content": SYSTEM_PROMPT},
+                            {"role": "user", "content": user_content}
+                        ],
+                        temperature=0.3,
+                        max_tokens=16384
+                    )
+                    
+                    json_text = clean_json_string(response.choices[0].message.content)
+                    candidate_json = json.loads(json_text)
+                    
+                    score, reasons = verifier.calculate_score(candidate_json, yolo_context)
+                    candidates.append({"json": candidate_json, "score": score, "reasons": reasons})
+                except: pass
 
-            except Exception as e:
-                print(f"Judge Error on {token}: {e}")
-                # Backoff
-                time.sleep(2)
+            if not candidates: continue
 
-    print(f"✅ Consensus Reached. Final dataset saved to {output_path}")
+            # 4. Pick Winner
+            candidates.sort(key=lambda x: x['score'], reverse=True)
+            best = candidates[0]
+            
+            final_record = best['json']
+            final_record['token'] = token
+            final_record['judge_score'] = best['score']
+            final_record['judge_log'] = best['reasons']
+            final_record['yolo_inventory'] = yolo_context
+            
+            f_out.write(json.dumps(final_record) + "\n")
+            f_out.flush()
 
 if __name__ == "__main__":
     main()
+    
+'''
+# Example usage:
+
+# Assuming you are in the project root
+
+python -m src.judge \
+  --files output/index_qwen_run.jsonl output/index_kimi_run.jsonl output/index_gemma_run.jsonl \
+  --output output/consensus_final.jsonl \
+  --n 3
+'''

@@ -13,6 +13,7 @@ venv/
 output/*.jsonl
 output/*.json
 output/logs_*/
+llama.cpp/
 
 # IDEs
 .vscode/
@@ -32,3 +33,24 @@ mobileclip_blt.ts
 yoloe-11l-seg.pt
 notebooks/mobileclip_blt.ts
 notebooks/yoloe-11l-seg.pt
+models
+nuscenes_data
+llama.cpp
+hf_demo_pack
+out.txt
+output.txt
+output.zip
+output2.zip
+
+# Keep specific important output files
+!output/clip_baseline.jsonl
+!output/index_qwen3_noYOLO_run.jsonl
+!output/logs_qwen3_noYOLO_run.jsonl
+!output/index_qwen3_run_reasoning.jsonl
+!output/logs_qwen3_run_reasoning.jsonl
+!output/index_gemma_run.jsonl
+!output/logs_gemma_run_reasoning.jsonl
+!output/index_kimi_run_reasoning.jsonl
+!output/logs_kimi_run_reasoning.jsonl
+!output/consensus_final.jsonl
+!output/gold_annotations_master.json

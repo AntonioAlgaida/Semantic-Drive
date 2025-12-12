@@ -1,0 +1,3587 @@
+{
+  "3435b0de308243509d0b9967a1a50296": {
+    "token": "3435b0de308243509d0b9967a1a50296",
+    "odd_attributes": {
+      "weather": "rain",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "wet",
+      "sensor_integrity": "droplets_on_lens"
+    },
+    "road_topology": {
+      "scene_type": "construction_zone",
+      "lane_configuration": "straight",
+      "drivable_area_status": "nominal",
+      "traffic_controls": [
+        "none"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "none",
+      "lead_vehicle_behavior": "nominal",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "perception_degradation",
+      "ego_required_action": "lane_keep",
+      "blocking_factor": "none",
+      "risk_score": 7
+    },
+    "wod_e2e_tags": [
+      "construction",
+      "weather_adverse"
+    ]
+  },
+  "0e295a122e87412ab04fdb5414e8b4dd": {
+    "token": "0e295a122e87412ab04fdb5414e8b4dd",
+    "odd_attributes": {
+      "weather": "overcast",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "wet",
+      "sensor_integrity": "nominal"
+    },
+    "road_topology": {
+      "scene_type": "urban_street",
+      "lane_configuration": "straight",
+      "drivable_area_status": "nominal",
+      "traffic_controls": [
+        "none"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "roadside_static",
+      "lead_vehicle_behavior": "nominal",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "prediction_uncertainty",
+      "ego_required_action": "lane_keep",
+      "blocking_factor": "none",
+      "risk_score": 5
+    },
+    "wod_e2e_tags": [
+      "vru_hazard",
+      "weather_adverse"
+    ]
+  },
+  "748e4f5f1a1c4c8cbbcb825ba9ebc739": {
+    "token": "748e4f5f1a1c4c8cbbcb825ba9ebc739",
+    "odd_attributes": {
+      "weather": "clear",
+      "time_of_day": "night",
+      "lighting_condition": "streetlights_only",
+      "road_surface_friction": "wet",
+      "sensor_integrity": "nominal"
+    },
+    "road_topology": {
+      "scene_type": "urban_street",
+      "lane_configuration": "straight",
+      "drivable_area_status": "blocked_by_dynamic_object",
+      "traffic_controls": [
+        "red_light"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "none",
+      "lead_vehicle_behavior": "stalled",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "perception_degradation",
+      "ego_required_action": "stop",
+      "blocking_factor": "vehicle",
+      "risk_score": 5
+    },
+    "wod_e2e_tags": [
+      "weather_adverse",
+      "sensor_failure"
+    ]
+  },
+  "e235097e8d3942bb9a0d62f99663124a": {
+    "token": "e235097e8d3942bb9a0d62f99663124a",
+    "odd_attributes": {
+      "weather": "clear",
+      "time_of_day": "night",
+      "lighting_condition": "streetlights_only",
+      "road_surface_friction": "dry",
+      "sensor_integrity": "motion_blur"
+    },
+    "road_topology": {
+      "scene_type": "urban_street",
+      "lane_configuration": "straight",
+      "drivable_area_status": "nominal",
+      "traffic_controls": [
+        "none"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "none",
+      "lead_vehicle_behavior": "none",
+      "adjacent_vehicle_behavior": "cutting_in_aggressive",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "perception_degradation",
+      "ego_required_action": "slow_down",
+      "blocking_factor": "none",
+      "risk_score": 4
+    },
+    "wod_e2e_tags": [
+      "sensor_failure"
+    ]
+  },
+  "3c701aeeef6545b88be9ebd13c2660e4": {
+    "token": "3c701aeeef6545b88be9ebd13c2660e4",
+    "odd_attributes": {
+      "weather": "heavy_rain",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "wet",
+      "sensor_integrity": "droplets_on_lens"
+    },
+    "road_topology": {
+      "scene_type": "urban_street",
+      "lane_configuration": "straight",
+      "drivable_area_status": "nominal",
+      "traffic_controls": [
+        "none"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "none",
+      "lead_vehicle_behavior": "none",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "prediction_uncertainty",
+      "ego_required_action": "slow_down",
+      "blocking_factor": "none",
+      "risk_score": 6
+    },
+    "wod_e2e_tags": [
+      "weather_adverse",
+      "vru_hazard"
+    ]
+  },
+  "7d036240624b48c3a78934c962581333": {
+    "token": "7d036240624b48c3a78934c962581333",
+    "odd_attributes": {
+      "weather": "clear",
+      "time_of_day": "day",
+      "lighting_condition": "glare_high",
+      "road_surface_friction": "dry",
+      "sensor_integrity": "sun_glare"
+    },
+    "road_topology": {
+      "scene_type": "urban_street",
+      "lane_configuration": "straight",
+      "drivable_area_status": "nominal",
+      "traffic_controls": [
+        "none"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "jaywalking_fast",
+      "lead_vehicle_behavior": "none",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "perception_degradation",
+      "ego_required_action": "lane_keep",
+      "blocking_factor": "none",
+      "risk_score": 3
+    },
+    "wod_e2e_tags": []
+  },
+  "8e2bf75652824d4186a15f4d866a52ac": {
+    "token": "8e2bf75652824d4186a15f4d866a52ac",
+    "odd_attributes": {
+      "weather": "clear",
+      "time_of_day": "night",
+      "lighting_condition": "streetlights_only",
+      "road_surface_friction": "dry",
+      "sensor_integrity": "nominal"
+    },
+    "road_topology": {
+      "scene_type": "urban_street",
+      "lane_configuration": "curve",
+      "drivable_area_status": "nominal",
+      "traffic_controls": [
+        "none"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "none",
+      "lead_vehicle_behavior": "none",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "perception_degradation",
+      "ego_required_action": "lane_keep",
+      "blocking_factor": "none",
+      "risk_score": 3
+    },
+    "wod_e2e_tags": [
+      "sensor_failure"
+    ]
+  },
+  "bd3d9b10242d42108adc092e8fbf674f": {
+    "token": "bd3d9b10242d42108adc092e8fbf674f",
+    "odd_attributes": {
+      "weather": "overcast",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "dry",
+      "sensor_integrity": "nominal"
+    },
+    "road_topology": {
+      "scene_type": "urban_street",
+      "lane_configuration": "straight",
+      "drivable_area_status": "nominal",
+      "traffic_controls": [
+        "none"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "none",
+      "lead_vehicle_behavior": "nominal",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "none",
+      "ego_required_action": "lane_keep",
+      "blocking_factor": "none",
+      "risk_score": 3
+    },
+    "wod_e2e_tags": []
+  },
+  "6cd6689710b24637a88d43a4f82cf3d3": {
+    "token": "6cd6689710b24637a88d43a4f82cf3d3",
+    "odd_attributes": {
+      "weather": "overcast",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "wet",
+      "sensor_integrity": "droplets_on_lens"
+    },
+    "road_topology": {
+      "scene_type": "intersection",
+      "lane_configuration": "intersection_4way",
+      "drivable_area_status": "restricted_by_static_obstacle",
+      "traffic_controls": [
+        "red_light",
+        "stop_sign"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "none",
+      "lead_vehicle_behavior": "stalled",
+      "adjacent_vehicle_behavior": "nominal",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "violation_of_map_topology",
+      "ego_required_action": "nudge_around_static_obstacle",
+      "blocking_factor": "none",
+      "risk_score": 7
+    },
+    "wod_e2e_tags": [
+      "intersection_complex",
+      "weather_adverse",
+      "special_vehicle",
+      "lane_diversion"
+    ]
+  },
+  "f7774606bec7410089d84d80f97b6bf6": {
+    "token": "f7774606bec7410089d84d80f97b6bf6",
+    "odd_attributes": {
+      "weather": "clear",
+      "time_of_day": "night",
+      "lighting_condition": "streetlights_only",
+      "road_surface_friction": "dry",
+      "sensor_integrity": "lens_flare"
+    },
+    "road_topology": {
+      "scene_type": "intersection",
+      "lane_configuration": "straight",
+      "drivable_area_status": "nominal",
+      "traffic_controls": [
+        "red_light"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "roadside_static",
+      "lead_vehicle_behavior": "nominal",
+      "adjacent_vehicle_behavior": "nominal",
+      "special_agent_class": "school_bus"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "prediction_uncertainty",
+      "ego_required_action": "stop",
+      "blocking_factor": "none",
+      "risk_score": 6
+    },
+    "wod_e2e_tags": [
+      "vru_hazard"
+    ]
+  },
+  "350222ca342b46c195ff574af999bd0a": {
+    "token": "350222ca342b46c195ff574af999bd0a",
+    "odd_attributes": {
+      "weather": "clear",
+      "time_of_day": "night",
+      "lighting_condition": "streetlights_only",
+      "road_surface_friction": "wet",
+      "sensor_integrity": "lens_flare"
+    },
+    "road_topology": {
+      "scene_type": "urban_street",
+      "lane_configuration": "straight",
+      "drivable_area_status": "nominal",
+      "traffic_controls": [
+        "none"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "none",
+      "lead_vehicle_behavior": "none",
+      "adjacent_vehicle_behavior": "nominal",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "perception_degradation",
+      "ego_required_action": "slow_down",
+      "blocking_factor": "none",
+      "risk_score": 7
+    },
+    "wod_e2e_tags": [
+      "weather_adverse"
+    ]
+  },
+  "fc46571bcec344718034e29c7395667e": {
+    "token": "fc46571bcec344718034e29c7395667e",
+    "odd_attributes": {
+      "weather": "clear",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "dry",
+      "sensor_integrity": "nominal"
+    },
+    "road_topology": {
+      "scene_type": "intersection",
+      "lane_configuration": "intersection_4way",
+      "drivable_area_status": "restricted_by_static_obstacle",
+      "traffic_controls": [
+        "stop_sign"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "roadside_static",
+      "lead_vehicle_behavior": "none",
+      "adjacent_vehicle_behavior": "nominal",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "occlusion_risk",
+      "ego_required_action": "stop",
+      "blocking_factor": "vehicle",
+      "risk_score": 7
+    },
+    "wod_e2e_tags": [
+      "vru_hazard",
+      "intersection_complex"
+    ]
+  },
+  "8920e4fabd9e49e696d0d49300bcebc3": {
+    "token": "8920e4fabd9e49e696d0d49300bcebc3",
+    "odd_attributes": {
+      "weather": "rain",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "wet",
+      "sensor_integrity": "droplets_on_lens"
+    },
+    "road_topology": {
+      "scene_type": "intersection",
+      "lane_configuration": "intersection_4way",
+      "drivable_area_status": "blocked_by_dynamic_object",
+      "traffic_controls": [
+        "red_light"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "none",
+      "lead_vehicle_behavior": "none",
+      "adjacent_vehicle_behavior": "nominal",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "perception_degradation",
+      "ego_required_action": "stop",
+      "blocking_factor": "vehicle",
+      "risk_score": 7
+    },
+    "wod_e2e_tags": [
+      "weather_adverse"
+    ]
+  },
+  "c4866d65281d46b6844c61e679b9e60b": {
+    "token": "c4866d65281d46b6844c61e679b9e60b",
+    "odd_attributes": {
+      "weather": "rain",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "wet",
+      "sensor_integrity": "droplets_on_lens"
+    },
+    "road_topology": {
+      "scene_type": "urban_street",
+      "lane_configuration": "straight",
+      "drivable_area_status": "blocked_by_dynamic_object",
+      "traffic_controls": [
+        "green_light"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "none",
+      "lead_vehicle_behavior": "nominal",
+      "adjacent_vehicle_behavior": "nominal",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "prediction_uncertainty",
+      "ego_required_action": "lane_keep",
+      "blocking_factor": "none",
+      "risk_score": 6
+    },
+    "wod_e2e_tags": [
+      "weather_adverse"
+    ]
+  },
+  "7290592094a44fc78ba995f880ba0b34": {
+    "token": "7290592094a44fc78ba995f880ba0b34",
+    "odd_attributes": {
+      "weather": "overcast",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "dry",
+      "sensor_integrity": "nominal"
+    },
+    "road_topology": {
+      "scene_type": "urban_street",
+      "lane_configuration": "straight",
+      "drivable_area_status": "nominal",
+      "traffic_controls": [
+        "none"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "none",
+      "lead_vehicle_behavior": "none",
+      "adjacent_vehicle_behavior": "nominal",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "none",
+      "ego_required_action": "lane_keep",
+      "blocking_factor": "none",
+      "risk_score": 3
+    },
+    "wod_e2e_tags": []
+  },
+  "3018c0295fb7498baf1bed6096f8ae13": {
+    "token": "3018c0295fb7498baf1bed6096f8ae13",
+    "odd_attributes": {
+      "weather": "clear",
+      "time_of_day": "night",
+      "lighting_condition": "pitch_black",
+      "road_surface_friction": "dry",
+      "sensor_integrity": "motion_blur"
+    },
+    "road_topology": {
+      "scene_type": "urban_street",
+      "lane_configuration": "straight",
+      "drivable_area_status": "restricted_by_static_obstacle",
+      "traffic_controls": [
+        "none"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "none",
+      "lead_vehicle_behavior": "none",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "none",
+      "ego_required_action": "lane_keep",
+      "blocking_factor": "debris",
+      "risk_score": 8
+    },
+    "wod_e2e_tags": [
+      "sensor_failure",
+      "fod_debris"
+    ]
+  },
+  "fc502409de6947dca3ef5442f8c001d1": {
+    "token": "fc502409de6947dca3ef5442f8c001d1",
+    "odd_attributes": {
+      "weather": "rain",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "wet",
+      "sensor_integrity": "droplets_on_lens"
+    },
+    "road_topology": {
+      "scene_type": "construction_zone",
+      "lane_configuration": "straight",
+      "drivable_area_status": "restricted_by_static_obstacle",
+      "traffic_controls": [
+        "none"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "none",
+      "lead_vehicle_behavior": "none",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "none",
+      "ego_required_action": "lane_keep",
+      "blocking_factor": "construction_barrier",
+      "risk_score": 7
+    },
+    "wod_e2e_tags": [
+      "construction"
+    ]
+  },
+  "dcbe451d383e450786aaad04ab9d3790": {
+    "token": "dcbe451d383e450786aaad04ab9d3790",
+    "odd_attributes": {
+      "weather": "clear",
+      "time_of_day": "day",
+      "lighting_condition": "glare_high",
+      "road_surface_friction": "dry",
+      "sensor_integrity": "nominal"
+    },
+    "road_topology": {
+      "scene_type": "urban_street",
+      "lane_configuration": "intersection_4way",
+      "drivable_area_status": "nominal",
+      "traffic_controls": [
+        "red_light",
+        "yield_sign"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "legal_crossing",
+      "lead_vehicle_behavior": "none",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "prediction_uncertainty",
+      "ego_required_action": "stop",
+      "blocking_factor": "pedestrian",
+      "risk_score": 8
+    },
+    "wod_e2e_tags": [
+      "vru_hazard",
+      "intersection_complex"
+    ]
+  },
+  "559a08e821924fab9931dd6d2b890044": {
+    "token": "559a08e821924fab9931dd6d2b890044",
+    "odd_attributes": {
+      "weather": "rain",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "wet",
+      "sensor_integrity": "droplets_on_lens"
+    },
+    "road_topology": {
+      "scene_type": "intersection",
+      "lane_configuration": "intersection_4way",
+      "drivable_area_status": "nominal",
+      "traffic_controls": [
+        "red_light"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "roadside_static",
+      "lead_vehicle_behavior": "none",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "prediction_uncertainty",
+      "ego_required_action": "stop",
+      "blocking_factor": "none",
+      "risk_score": 7
+    },
+    "wod_e2e_tags": [
+      "weather_adverse",
+      "intersection_complex"
+    ]
+  },
+  "35877a50756642d2ad693e6282ca59eb": {
+    "token": "35877a50756642d2ad693e6282ca59eb",
+    "odd_attributes": {
+      "weather": "rain",
+      "time_of_day": "day",
+      "lighting_condition": "glare_high",
+      "road_surface_friction": "wet",
+      "sensor_integrity": "droplets_on_lens"
+    },
+    "road_topology": {
+      "scene_type": "urban_street",
+      "lane_configuration": "intersection_4way",
+      "drivable_area_status": "nominal",
+      "traffic_controls": [
+        "red_light"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "none",
+      "lead_vehicle_behavior": "nominal",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "perception_degradation",
+      "ego_required_action": "stop",
+      "blocking_factor": "none",
+      "risk_score": 8
+    },
+    "wod_e2e_tags": [
+      "weather_adverse"
+    ]
+  },
+  "0382fe992523435580ac3599fee07b2c": {
+    "token": "0382fe992523435580ac3599fee07b2c",
+    "odd_attributes": {
+      "weather": "clear",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "dry",
+      "sensor_integrity": "nominal"
+    },
+    "road_topology": {
+      "scene_type": "urban_street",
+      "lane_configuration": "curve",
+      "drivable_area_status": "nominal",
+      "traffic_controls": []
+    },
+    "key_interacting_agents": {
+      "vru_status": "none",
+      "lead_vehicle_behavior": "nominal",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "none",
+      "ego_required_action": "lane_keep",
+      "blocking_factor": "none",
+      "risk_score": 5
+    },
+    "wod_e2e_tags": []
+  },
+  "77726965b5f14886a5c77149a2d20998": {
+    "token": "77726965b5f14886a5c77149a2d20998",
+    "odd_attributes": {
+      "weather": "rain",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "wet",
+      "sensor_integrity": "droplets_on_lens"
+    },
+    "road_topology": {
+      "scene_type": "urban_street",
+      "lane_configuration": "straight",
+      "drivable_area_status": "nominal",
+      "traffic_controls": [
+        "none"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "none",
+      "lead_vehicle_behavior": "nominal",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "perception_degradation",
+      "ego_required_action": "slow_down",
+      "blocking_factor": "vehicle",
+      "risk_score": 5
+    },
+    "wod_e2e_tags": [
+      "weather_adverse"
+    ]
+  },
+  "075bcf254e22463eb593adacb45bbdd5": {
+    "token": "075bcf254e22463eb593adacb45bbdd5",
+    "odd_attributes": {
+      "weather": "clear",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "dry",
+      "sensor_integrity": "nominal"
+    },
+    "road_topology": {
+      "scene_type": "construction_zone",
+      "lane_configuration": "straight",
+      "drivable_area_status": "restricted_by_static_obstacle",
+      "traffic_controls": [
+        "none"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "none",
+      "lead_vehicle_behavior": "nominal",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "violation_of_map_topology",
+      "ego_required_action": "lane_keep",
+      "blocking_factor": "construction_barrier",
+      "risk_score": 6
+    },
+    "wod_e2e_tags": [
+      "construction",
+      "lane_diversion"
+    ]
+  },
+  "02b2576a25dc4e6a9264966fae4618bb": {
+    "token": "02b2576a25dc4e6a9264966fae4618bb",
+    "odd_attributes": {
+      "weather": "overcast",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "wet",
+      "sensor_integrity": "droplets_on_lens"
+    },
+    "road_topology": {
+      "scene_type": "urban_street",
+      "lane_configuration": "straight",
+      "drivable_area_status": "nominal",
+      "traffic_controls": [
+        "none"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "none",
+      "lead_vehicle_behavior": "none",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "perception_degradation",
+      "ego_required_action": "lane_keep",
+      "blocking_factor": "none",
+      "risk_score": 5
+    },
+    "wod_e2e_tags": [
+      "weather_adverse"
+    ]
+  },
+  "6d441f62cca84aec8c7d7b2ef3518bf8": {
+    "token": "6d441f62cca84aec8c7d7b2ef3518bf8",
+    "odd_attributes": {
+      "weather": "clear",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "dry",
+      "sensor_integrity": "nominal"
+    },
+    "road_topology": {
+      "scene_type": "urban_street",
+      "lane_configuration": "intersection_4way",
+      "drivable_area_status": "nominal",
+      "traffic_controls": [
+        "red_light"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "legal_crossing",
+      "lead_vehicle_behavior": "none",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "none",
+      "ego_required_action": "stop",
+      "blocking_factor": "none",
+      "risk_score": 2
+    },
+    "wod_e2e_tags": [
+      "intersection_complex",
+      "vru_hazard"
+    ]
+  },
+  "79caf3784b924bcfb74d2676c3b5dcdb": {
+    "token": "79caf3784b924bcfb74d2676c3b5dcdb",
+    "odd_attributes": {
+      "weather": "clear",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "dry",
+      "sensor_integrity": "nominal"
+    },
+    "road_topology": {
+      "scene_type": "urban_street",
+      "lane_configuration": "straight",
+      "drivable_area_status": "nominal",
+      "traffic_controls": [
+        "none"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "jaywalking_hesitant",
+      "lead_vehicle_behavior": "nominal",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "prediction_uncertainty",
+      "ego_required_action": "lane_keep",
+      "blocking_factor": "none",
+      "risk_score": 4
+    },
+    "wod_e2e_tags": [
+      "vru_hazard"
+    ]
+  },
+  "90bf8cc6d6c340859bbb99056a0e7e8e": {
+    "token": "90bf8cc6d6c340859bbb99056a0e7e8e",
+    "odd_attributes": {
+      "weather": "clear",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "dry",
+      "sensor_integrity": "motion_blur"
+    },
+    "road_topology": {
+      "scene_type": "urban_street",
+      "lane_configuration": "straight",
+      "drivable_area_status": "nominal",
+      "traffic_controls": [
+        "none"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "none",
+      "lead_vehicle_behavior": "none",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "none",
+      "ego_required_action": "nudge_around_static_obstacle",
+      "blocking_factor": "vehicle",
+      "risk_score": 5
+    },
+    "wod_e2e_tags": []
+  },
+  "7db0a6adf1b040e0ba30b4d21b888a3b": {
+    "token": "7db0a6adf1b040e0ba30b4d21b888a3b",
+    "odd_attributes": {
+      "weather": "clear",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "dry",
+      "sensor_integrity": "nominal"
+    },
+    "road_topology": {
+      "scene_type": "construction_zone",
+      "lane_configuration": "merge_right",
+      "drivable_area_status": "restricted_by_static_obstacle",
+      "traffic_controls": [
+        "none"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "roadside_static",
+      "lead_vehicle_behavior": "none",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "violation_of_map_topology",
+      "ego_required_action": "nudge_around_static_obstacle",
+      "blocking_factor": "construction_barrier",
+      "risk_score": 8
+    },
+    "wod_e2e_tags": [
+      "construction",
+      "lane_diversion",
+      "vru_hazard"
+    ]
+  },
+  "412a6a49f529414c95364de5842795a5": {
+    "token": "412a6a49f529414c95364de5842795a5",
+    "odd_attributes": {
+      "weather": "clear",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "dry",
+      "sensor_integrity": "nominal"
+    },
+    "road_topology": {
+      "scene_type": "construction_zone",
+      "lane_configuration": "merge_left",
+      "drivable_area_status": "restricted_by_static_obstacle",
+      "traffic_controls": [
+        "stop_sign"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "roadside_static",
+      "lead_vehicle_behavior": "none",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "construction_machinery"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "violation_of_map_topology",
+      "ego_required_action": "lane_change",
+      "blocking_factor": "construction_barrier",
+      "risk_score": 8
+    },
+    "wod_e2e_tags": [
+      "construction",
+      "lane_diversion",
+      "vru_hazard"
+    ]
+  },
+  "eb2aee021ee94234a96591c073f07039": {
+    "token": "eb2aee021ee94234a96591c073f07039",
+    "odd_attributes": {
+      "weather": "clear",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "dry",
+      "sensor_integrity": "nominal"
+    },
+    "road_topology": {
+      "scene_type": "intersection",
+      "lane_configuration": "intersection_4way",
+      "drivable_area_status": "restricted_by_static_obstacle",
+      "traffic_controls": [
+        "red_light"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "roadside_static",
+      "lead_vehicle_behavior": "none",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "none",
+      "ego_required_action": "stop",
+      "blocking_factor": "none",
+      "risk_score": 5
+    },
+    "wod_e2e_tags": [
+      "intersection_complex"
+    ]
+  },
+  "aef432bdd6004dbc847cfb4e6172663d": {
+    "token": "aef432bdd6004dbc847cfb4e6172663d",
+    "odd_attributes": {
+      "weather": "overcast",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "dry",
+      "sensor_integrity": "nominal"
+    },
+    "road_topology": {
+      "scene_type": "construction_zone",
+      "lane_configuration": "merge_right",
+      "drivable_area_status": "restricted_by_static_obstacle",
+      "traffic_controls": [
+        "red_light"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "roadside_static",
+      "lead_vehicle_behavior": "stalled",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "construction_machinery"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "violation_of_map_topology",
+      "ego_required_action": "stop",
+      "blocking_factor": "construction_barrier",
+      "risk_score": 9
+    },
+    "wod_e2e_tags": [
+      "construction",
+      "special_vehicle",
+      "lane_diversion"
+    ]
+  },
+  "19bae631fb39403fa15e7abcf3b84c43": {
+    "token": "19bae631fb39403fa15e7abcf3b84c43",
+    "odd_attributes": {
+      "weather": "overcast",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "wet",
+      "sensor_integrity": "droplets_on_lens"
+    },
+    "road_topology": {
+      "scene_type": "parking_lot",
+      "lane_configuration": "straight",
+      "drivable_area_status": "nominal",
+      "traffic_controls": [
+        "none"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "none",
+      "lead_vehicle_behavior": "none",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "none",
+      "ego_required_action": "lane_keep",
+      "blocking_factor": "construction_barrier",
+      "risk_score": 8
+    },
+    "wod_e2e_tags": [
+      "lane_diversion",
+      "weather_adverse"
+    ]
+  },
+  "2f5248eac5d1492cb24c06b6f7a937be": {
+    "token": "2f5248eac5d1492cb24c06b6f7a937be",
+    "odd_attributes": {
+      "weather": "rain",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "wet",
+      "sensor_integrity": "droplets_on_lens"
+    },
+    "road_topology": {
+      "scene_type": "urban_street",
+      "lane_configuration": "intersection_4way",
+      "drivable_area_status": "nominal",
+      "traffic_controls": [
+        "green_light"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "none",
+      "lead_vehicle_behavior": "nominal",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "perception_degradation",
+      "ego_required_action": "slow_down",
+      "blocking_factor": "none",
+      "risk_score": 7
+    },
+    "wod_e2e_tags": [
+      "weather_adverse"
+    ]
+  },
+  "f1e0317b4963452e9cbd3aaa7ebe7579": {
+    "token": "f1e0317b4963452e9cbd3aaa7ebe7579",
+    "odd_attributes": {
+      "weather": "clear",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "dry",
+      "sensor_integrity": "nominal"
+    },
+    "road_topology": {
+      "scene_type": "urban_street",
+      "lane_configuration": "straight",
+      "drivable_area_status": "nominal",
+      "traffic_controls": [
+        "none"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "jaywalking_fast",
+      "lead_vehicle_behavior": "none",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "none",
+      "ego_required_action": "lane_keep",
+      "blocking_factor": "none",
+      "risk_score": 4
+    },
+    "wod_e2e_tags": [
+      "vru_hazard"
+    ]
+  },
+  "7b4e72598a6b432b86d2696f6a03fcd2": {
+    "token": "7b4e72598a6b432b86d2696f6a03fcd2",
+    "odd_attributes": {
+      "weather": "clear",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "dry",
+      "sensor_integrity": "nominal"
+    },
+    "road_topology": {
+      "scene_type": "urban_street",
+      "lane_configuration": "straight",
+      "drivable_area_status": "restricted_by_static_obstacle",
+      "traffic_controls": [
+        "none"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "roadside_static",
+      "lead_vehicle_behavior": "stalled",
+      "adjacent_vehicle_behavior": "nominal",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "none",
+      "ego_required_action": "nudge_around_static_obstacle",
+      "blocking_factor": "pedestrian",
+      "risk_score": 8
+    },
+    "wod_e2e_tags": [
+      "vru_hazard"
+    ]
+  },
+  "65a8ef19da634de79e11e8ae1e127947": {
+    "token": "65a8ef19da634de79e11e8ae1e127947",
+    "odd_attributes": {
+      "weather": "clear",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "dry",
+      "sensor_integrity": "nominal"
+    },
+    "road_topology": {
+      "scene_type": "intersection",
+      "lane_configuration": "intersection_4way",
+      "drivable_area_status": "nominal",
+      "traffic_controls": [
+        "red_light"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "none",
+      "lead_vehicle_behavior": "none",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "none",
+      "ego_required_action": "stop",
+      "blocking_factor": "none",
+      "risk_score": 4
+    },
+    "wod_e2e_tags": [
+      "intersection_complex"
+    ]
+  },
+  "7178e12f0bf14ce0908584125f9df2e2": {
+    "token": "7178e12f0bf14ce0908584125f9df2e2",
+    "odd_attributes": {
+      "weather": "overcast",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "wet",
+      "sensor_integrity": "droplets_on_lens"
+    },
+    "road_topology": {
+      "scene_type": "construction_zone",
+      "lane_configuration": "straight",
+      "drivable_area_status": "nominal",
+      "traffic_controls": [
+        "none"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "roadside_static",
+      "lead_vehicle_behavior": "none",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "construction_machinery"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "violation_of_map_topology",
+      "ego_required_action": "lane_keep",
+      "blocking_factor": "construction_barrier",
+      "risk_score": 6
+    },
+    "wod_e2e_tags": [
+      "construction",
+      "weather_adverse"
+    ]
+  },
+  "dab2d6b3b92049d99cbb1067f845337e": {
+    "token": "dab2d6b3b92049d99cbb1067f845337e",
+    "odd_attributes": {
+      "weather": "clear",
+      "time_of_day": "day",
+      "lighting_condition": "glare_high",
+      "road_surface_friction": "dry",
+      "sensor_integrity": "lens_flare"
+    },
+    "road_topology": {
+      "scene_type": "urban_street",
+      "lane_configuration": "straight",
+      "drivable_area_status": "blocked_by_dynamic_object",
+      "traffic_controls": [
+        "none"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "jaywalking_hesitant",
+      "lead_vehicle_behavior": "nominal",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "perception_degradation",
+      "ego_required_action": "slow_down",
+      "blocking_factor": "construction_barrier",
+      "risk_score": 8
+    },
+    "wod_e2e_tags": [
+      "construction",
+      "sensor_failure",
+      "vru_hazard"
+    ]
+  },
+  "ce7c414656da4ddc90b8f1b82f1169d8": {
+    "token": "ce7c414656da4ddc90b8f1b82f1169d8",
+    "odd_attributes": {
+      "weather": "clear",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "dry",
+      "sensor_integrity": "nominal"
+    },
+    "road_topology": {
+      "scene_type": "intersection",
+      "lane_configuration": "intersection_4way",
+      "drivable_area_status": "nominal",
+      "traffic_controls": [
+        "red_light",
+        "yellow_light"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "none",
+      "lead_vehicle_behavior": "nominal",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "prediction_uncertainty",
+      "ego_required_action": "slow_down",
+      "blocking_factor": "none",
+      "risk_score": 5
+    },
+    "wod_e2e_tags": [
+      "intersection_complex"
+    ]
+  },
+  "538d60ddf0014c268ee1efbec35289a1": {
+    "token": "538d60ddf0014c268ee1efbec35289a1",
+    "odd_attributes": {
+      "weather": "clear",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "dry",
+      "sensor_integrity": "nominal"
+    },
+    "road_topology": {
+      "scene_type": "urban_street",
+      "lane_configuration": "straight",
+      "drivable_area_status": "nominal",
+      "traffic_controls": [
+        "none"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "none",
+      "lead_vehicle_behavior": "nominal",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "occlusion_risk",
+      "ego_required_action": "nudge_around_static_obstacle",
+      "blocking_factor": "vehicle",
+      "risk_score": 6
+    },
+    "wod_e2e_tags": []
+  },
+  "107dd32140844573924260f9ad9390bf": {
+    "token": "107dd32140844573924260f9ad9390bf",
+    "odd_attributes": {
+      "weather": "clear",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "dry",
+      "sensor_integrity": "nominal"
+    },
+    "road_topology": {
+      "scene_type": "urban_street",
+      "lane_configuration": "straight",
+      "drivable_area_status": "nominal",
+      "traffic_controls": [
+        "green_light"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "legal_crossing",
+      "lead_vehicle_behavior": "none",
+      "adjacent_vehicle_behavior": "nominal",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "prediction_uncertainty",
+      "ego_required_action": "lane_keep",
+      "blocking_factor": "pedestrian",
+      "risk_score": 6
+    },
+    "wod_e2e_tags": [
+      "vru_hazard"
+    ]
+  },
+  "f07d9c256cea46db821c50364f5066e1": {
+    "token": "f07d9c256cea46db821c50364f5066e1",
+    "odd_attributes": {
+      "weather": "clear",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "dry",
+      "sensor_integrity": "nominal"
+    },
+    "road_topology": {
+      "scene_type": "construction_zone",
+      "lane_configuration": "merge_left",
+      "drivable_area_status": "restricted_by_static_obstacle",
+      "traffic_controls": [
+        "none"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "legal_crossing",
+      "lead_vehicle_behavior": "none",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "construction_machinery"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "violation_of_map_topology",
+      "ego_required_action": "lane_change",
+      "blocking_factor": "construction_barrier",
+      "risk_score": 7
+    },
+    "wod_e2e_tags": [
+      "construction",
+      "lane_diversion",
+      "vru_hazard"
+    ]
+  },
+  "8104e066e9964303ab23c07d88d209ed": {
+    "token": "8104e066e9964303ab23c07d88d209ed",
+    "odd_attributes": {
+      "weather": "clear",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "dry",
+      "sensor_integrity": "nominal"
+    },
+    "road_topology": {
+      "scene_type": "construction_zone",
+      "lane_configuration": "merge_right",
+      "drivable_area_status": "blocked_by_dynamic_object",
+      "traffic_controls": [
+        "none"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "cyclist_in_lane",
+      "lead_vehicle_behavior": "none",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "prediction_uncertainty",
+      "ego_required_action": "lane_change",
+      "blocking_factor": "construction_barrier",
+      "risk_score": 8
+    },
+    "wod_e2e_tags": [
+      "construction",
+      "vru_hazard"
+    ]
+  },
+  "65e374d35aed4099ac9cd42f10418203": {
+    "token": "65e374d35aed4099ac9cd42f10418203",
+    "odd_attributes": {
+      "weather": "clear",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "dry",
+      "sensor_integrity": "nominal"
+    },
+    "road_topology": {
+      "scene_type": "construction_zone",
+      "lane_configuration": "merge_right",
+      "drivable_area_status": "restricted_by_static_obstacle",
+      "traffic_controls": [
+        "none"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "none",
+      "lead_vehicle_behavior": "none",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "violation_of_map_topology",
+      "ego_required_action": "lane_change",
+      "blocking_factor": "construction_barrier",
+      "risk_score": 7
+    },
+    "wod_e2e_tags": [
+      "construction",
+      "lane_diversion"
+    ]
+  },
+  "b2af46f0857043b0896fc842f20cd1da": {
+    "token": "b2af46f0857043b0896fc842f20cd1da",
+    "odd_attributes": {
+      "weather": "rain",
+      "time_of_day": "night",
+      "lighting_condition": "streetlights_only",
+      "road_surface_friction": "wet",
+      "sensor_integrity": "droplets_on_lens"
+    },
+    "road_topology": {
+      "scene_type": "urban_street",
+      "lane_configuration": "straight",
+      "drivable_area_status": "restricted_by_static_obstacle",
+      "traffic_controls": [
+        "green_light"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "none",
+      "lead_vehicle_behavior": "braking_suddenly",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "perception_degradation",
+      "ego_required_action": "slow_down",
+      "blocking_factor": "none",
+      "risk_score": 7
+    },
+    "wod_e2e_tags": [
+      "weather_adverse"
+    ]
+  },
+  "c5b518e3ec054ef4b2209d2b56a9bf51": {
+    "token": "c5b518e3ec054ef4b2209d2b56a9bf51",
+    "odd_attributes": {
+      "weather": "clear",
+      "time_of_day": "night",
+      "lighting_condition": "streetlights_only",
+      "road_surface_friction": "dry",
+      "sensor_integrity": "motion_blur"
+    },
+    "road_topology": {
+      "scene_type": "urban_street",
+      "lane_configuration": "straight",
+      "drivable_area_status": "nominal",
+      "traffic_controls": [
+        "stop_sign"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "jaywalking_hesitant",
+      "lead_vehicle_behavior": "nominal",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "prediction_uncertainty",
+      "ego_required_action": "slow_down",
+      "blocking_factor": "pedestrian",
+      "risk_score": 8
+    },
+    "wod_e2e_tags": [
+      "vru_hazard",
+      "sensor_failure"
+    ]
+  },
+  "85d1c474f3cf4a4cbf82e5484115dc8a": {
+    "token": "85d1c474f3cf4a4cbf82e5484115dc8a",
+    "odd_attributes": {
+      "weather": "clear",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "dry",
+      "sensor_integrity": "nominal"
+    },
+    "road_topology": {
+      "scene_type": "intersection",
+      "lane_configuration": "intersection_t_junction",
+      "drivable_area_status": "nominal",
+      "traffic_controls": [
+        "yellow_light"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "none",
+      "lead_vehicle_behavior": "none",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "none",
+      "ego_required_action": "stop",
+      "blocking_factor": "none",
+      "risk_score": 3
+    },
+    "wod_e2e_tags": []
+  },
+  "a6c7d30b3ff849ed80e35dbacf992b3a": {
+    "token": "a6c7d30b3ff849ed80e35dbacf992b3a",
+    "odd_attributes": {
+      "weather": "heavy_rain",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "wet",
+      "sensor_integrity": "droplets_on_lens"
+    },
+    "road_topology": {
+      "scene_type": "urban_street",
+      "lane_configuration": "straight",
+      "drivable_area_status": "nominal",
+      "traffic_controls": [
+        "green_light"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "none",
+      "lead_vehicle_behavior": "none",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "perception_degradation",
+      "ego_required_action": "slow_down",
+      "blocking_factor": "none",
+      "risk_score": 6
+    },
+    "wod_e2e_tags": [
+      "weather_adverse"
+    ]
+  },
+  "3e1d40ecbb3142689ba1b8e4d8d955d4": {
+    "token": "3e1d40ecbb3142689ba1b8e4d8d955d4",
+    "odd_attributes": {
+      "weather": "clear",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "dry",
+      "sensor_integrity": "nominal"
+    },
+    "road_topology": {
+      "scene_type": "urban_street",
+      "lane_configuration": "curve",
+      "drivable_area_status": "nominal",
+      "traffic_controls": [
+        "none"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "none",
+      "lead_vehicle_behavior": "none",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "none",
+      "ego_required_action": "lane_keep",
+      "blocking_factor": "none",
+      "risk_score": 1
+    },
+    "wod_e2e_tags": []
+  },
+  "e4363f9c430949b696bb6295350068fd": {
+    "token": "e4363f9c430949b696bb6295350068fd",
+    "odd_attributes": {
+      "weather": "clear",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "dry",
+      "sensor_integrity": "nominal"
+    },
+    "road_topology": {
+      "scene_type": "urban_street",
+      "lane_configuration": "straight",
+      "drivable_area_status": "nominal",
+      "traffic_controls": [
+        "none"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "none",
+      "lead_vehicle_behavior": "none",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "none",
+      "ego_required_action": "lane_keep",
+      "blocking_factor": "none",
+      "risk_score": 3
+    },
+    "wod_e2e_tags": []
+  },
+  "9966b18d95da4e2c98628a7f8b238699": {
+    "token": "9966b18d95da4e2c98628a7f8b238699",
+    "odd_attributes": {
+      "weather": "overcast",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "wet",
+      "sensor_integrity": "droplets_on_lens"
+    },
+    "road_topology": {
+      "scene_type": "urban_street",
+      "lane_configuration": "straight",
+      "drivable_area_status": "nominal",
+      "traffic_controls": [
+        "none"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "none",
+      "lead_vehicle_behavior": "nominal",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "prediction_uncertainty",
+      "ego_required_action": "lane_keep",
+      "blocking_factor": "none",
+      "risk_score": 3
+    },
+    "wod_e2e_tags": [
+      "weather_adverse"
+    ]
+  },
+  "8e46878ced734164aae0e83567aa02a5": {
+    "token": "8e46878ced734164aae0e83567aa02a5",
+    "odd_attributes": {
+      "weather": "clear",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "dry",
+      "sensor_integrity": "nominal"
+    },
+    "road_topology": {
+      "scene_type": "urban_street",
+      "lane_configuration": "straight",
+      "drivable_area_status": "nominal",
+      "traffic_controls": [
+        "none"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "none",
+      "lead_vehicle_behavior": "none",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "none",
+      "ego_required_action": "lane_keep",
+      "blocking_factor": "none",
+      "risk_score": 1
+    },
+    "wod_e2e_tags": []
+  },
+  "20d404c7a0d9453c9e9976998acbc239": {
+    "token": "20d404c7a0d9453c9e9976998acbc239",
+    "odd_attributes": {
+      "weather": "clear",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "dry",
+      "sensor_integrity": "nominal"
+    },
+    "road_topology": {
+      "scene_type": "intersection",
+      "lane_configuration": "intersection_4way",
+      "drivable_area_status": "nominal",
+      "traffic_controls": [
+        "green_light",
+        "stop_sign"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "cyclist_in_lane",
+      "lead_vehicle_behavior": "nominal",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "ambulance"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "prediction_uncertainty",
+      "ego_required_action": "slow_down",
+      "blocking_factor": "none",
+      "risk_score": 6
+    },
+    "wod_e2e_tags": [
+      "intersection_complex",
+      "vru_hazard",
+      "special_vehicle"
+    ]
+  },
+  "f776ed1be97c4b11b142a18ba2d5d8d7": {
+    "token": "f776ed1be97c4b11b142a18ba2d5d8d7",
+    "odd_attributes": {
+      "weather": "overcast",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "dry",
+      "sensor_integrity": "nominal"
+    },
+    "road_topology": {
+      "scene_type": "intersection",
+      "lane_configuration": "intersection_4way",
+      "drivable_area_status": "nominal",
+      "traffic_controls": [
+        "red_light"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "jaywalking_fast",
+      "lead_vehicle_behavior": "none",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "prediction_uncertainty",
+      "ego_required_action": "stop",
+      "blocking_factor": "pedestrian",
+      "risk_score": 7
+    },
+    "wod_e2e_tags": [
+      "intersection_complex",
+      "vru_hazard"
+    ]
+  },
+  "e4bd3cf841e94094a7955c1d5c5b0e73": {
+    "token": "e4bd3cf841e94094a7955c1d5c5b0e73",
+    "odd_attributes": {
+      "weather": "clear",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "dry",
+      "sensor_integrity": "nominal"
+    },
+    "road_topology": {
+      "scene_type": "urban_street",
+      "lane_configuration": "intersection_4way",
+      "drivable_area_status": "nominal",
+      "traffic_controls": [
+        "red_light"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "cyclist_in_lane",
+      "lead_vehicle_behavior": "none",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "prediction_uncertainty",
+      "ego_required_action": "slow_down",
+      "blocking_factor": "none",
+      "risk_score": 6
+    },
+    "wod_e2e_tags": [
+      "intersection_complex",
+      "vru_hazard"
+    ]
+  },
+  "de52afcc66d9450da5f07b10977e0493": {
+    "token": "de52afcc66d9450da5f07b10977e0493",
+    "odd_attributes": {
+      "weather": "clear",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "dry",
+      "sensor_integrity": "nominal"
+    },
+    "road_topology": {
+      "scene_type": "urban_street",
+      "lane_configuration": "straight",
+      "drivable_area_status": "restricted_by_static_obstacle",
+      "traffic_controls": [
+        "none"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "none",
+      "lead_vehicle_behavior": "stalled",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "construction_machinery"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "violation_of_map_topology",
+      "ego_required_action": "lane_change",
+      "blocking_factor": "construction_barrier",
+      "risk_score": 8
+    },
+    "wod_e2e_tags": [
+      "construction",
+      "lane_diversion"
+    ]
+  },
+  "7d5467b98e28404386bb8b3d929067d0": {
+    "token": "7d5467b98e28404386bb8b3d929067d0",
+    "odd_attributes": {
+      "weather": "overcast",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "dry",
+      "sensor_integrity": "nominal"
+    },
+    "road_topology": {
+      "scene_type": "urban_street",
+      "lane_configuration": "straight",
+      "drivable_area_status": "nominal",
+      "traffic_controls": [
+        "none"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "cyclist_in_lane",
+      "lead_vehicle_behavior": "nominal",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "prediction_uncertainty",
+      "ego_required_action": "nudge_around_static_obstacle",
+      "blocking_factor": "none",
+      "risk_score": 6
+    },
+    "wod_e2e_tags": [
+      "vru_hazard"
+    ]
+  },
+  "b77c6c3c01fe4353a7798788daa0bbcd": {
+    "token": "b77c6c3c01fe4353a7798788daa0bbcd",
+    "odd_attributes": {
+      "weather": "overcast",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "dry",
+      "sensor_integrity": "nominal"
+    },
+    "road_topology": {
+      "scene_type": "urban_street",
+      "lane_configuration": "intersection_4way",
+      "drivable_area_status": "nominal",
+      "traffic_controls": [
+        "red_light"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "legal_crossing",
+      "lead_vehicle_behavior": "nominal",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "prediction_uncertainty",
+      "ego_required_action": "lane_keep",
+      "blocking_factor": "none",
+      "risk_score": 5
+    },
+    "wod_e2e_tags": [
+      "vru_hazard"
+    ]
+  },
+  "73a83a6061544574b8be26769cd040c3": {
+    "token": "73a83a6061544574b8be26769cd040c3",
+    "odd_attributes": {
+      "weather": "clear",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "dry",
+      "sensor_integrity": "nominal"
+    },
+    "road_topology": {
+      "scene_type": "urban_street",
+      "lane_configuration": "straight",
+      "drivable_area_status": "nominal",
+      "traffic_controls": [
+        "none"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "none",
+      "lead_vehicle_behavior": "nominal",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "none",
+      "ego_required_action": "lane_keep",
+      "blocking_factor": "none",
+      "risk_score": 1
+    },
+    "wod_e2e_tags": []
+  },
+  "1241c106eb8e49f09f91ea9b2552cd84": {
+    "token": "1241c106eb8e49f09f91ea9b2552cd84",
+    "odd_attributes": {
+      "weather": "overcast",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "dry",
+      "sensor_integrity": "nominal"
+    },
+    "road_topology": {
+      "scene_type": "urban_street",
+      "lane_configuration": "curve",
+      "drivable_area_status": "nominal",
+      "traffic_controls": [
+        "none"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "none",
+      "lead_vehicle_behavior": "none",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "none",
+      "ego_required_action": "lane_keep",
+      "blocking_factor": "none",
+      "risk_score": 4
+    },
+    "wod_e2e_tags": [
+      "intersection_complex"
+    ]
+  },
+  "d1129731ff224dfeb73f3e0bb3bb58b7": {
+    "token": "d1129731ff224dfeb73f3e0bb3bb58b7",
+    "odd_attributes": {
+      "weather": "overcast",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "dry",
+      "sensor_integrity": "nominal"
+    },
+    "road_topology": {
+      "scene_type": "urban_street",
+      "lane_configuration": "intersection_t_junction",
+      "drivable_area_status": "nominal",
+      "traffic_controls": [
+        "none"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "none",
+      "lead_vehicle_behavior": "nominal",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "occlusion_risk",
+      "ego_required_action": "slow_down",
+      "blocking_factor": "none",
+      "risk_score": 4
+    },
+    "wod_e2e_tags": []
+  },
+  "a86def9a6d804c47b143f9fc7a40ae67": {
+    "token": "a86def9a6d804c47b143f9fc7a40ae67",
+    "odd_attributes": {
+      "weather": "overcast",
+      "time_of_day": "dawn_dusk",
+      "lighting_condition": "streetlights_only",
+      "road_surface_friction": "dry",
+      "sensor_integrity": "motion_blur"
+    },
+    "road_topology": {
+      "scene_type": "urban_street",
+      "lane_configuration": "curve",
+      "drivable_area_status": "nominal",
+      "traffic_controls": [
+        "none"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "none",
+      "lead_vehicle_behavior": "none",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "perception_degradation",
+      "ego_required_action": "lane_keep",
+      "blocking_factor": "none",
+      "risk_score": 3
+    },
+    "wod_e2e_tags": [
+      "sensor_failure"
+    ]
+  },
+  "b1c10b7f077b40dab048004f413fc21a": {
+    "token": "b1c10b7f077b40dab048004f413fc21a",
+    "odd_attributes": {
+      "weather": "clear",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "dry",
+      "sensor_integrity": "nominal"
+    },
+    "road_topology": {
+      "scene_type": "construction_zone",
+      "lane_configuration": "straight",
+      "drivable_area_status": "nominal",
+      "traffic_controls": [
+        "none"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "none",
+      "lead_vehicle_behavior": "nominal",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "perception_degradation",
+      "ego_required_action": "lane_keep",
+      "blocking_factor": "construction_barrier",
+      "risk_score": 5
+    },
+    "wod_e2e_tags": [
+      "construction"
+    ]
+  },
+  "829ca2190efe4aa88f260bffb1d0697a": {
+    "token": "829ca2190efe4aa88f260bffb1d0697a",
+    "odd_attributes": {
+      "weather": "clear",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "dry",
+      "sensor_integrity": "nominal"
+    },
+    "road_topology": {
+      "scene_type": "construction_zone",
+      "lane_configuration": "intersection_4way",
+      "drivable_area_status": "restricted_by_static_obstacle",
+      "traffic_controls": [
+        "red_light"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "none",
+      "lead_vehicle_behavior": "none",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "occlusion_risk",
+      "ego_required_action": "lane_keep",
+      "blocking_factor": "construction_barrier",
+      "risk_score": 8
+    },
+    "wod_e2e_tags": [
+      "construction",
+      "vru_hazard",
+      "intersection_complex"
+    ]
+  },
+  "84be933be84649c4ace40b3730ac400d": {
+    "token": "84be933be84649c4ace40b3730ac400d",
+    "odd_attributes": {
+      "weather": "overcast",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "dry",
+      "sensor_integrity": "nominal"
+    },
+    "road_topology": {
+      "scene_type": "construction_zone",
+      "lane_configuration": "straight",
+      "drivable_area_status": "nominal",
+      "traffic_controls": [
+        "none"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "none",
+      "lead_vehicle_behavior": "none",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "prediction_uncertainty",
+      "ego_required_action": "slow_down",
+      "blocking_factor": "none",
+      "risk_score": 5
+    },
+    "wod_e2e_tags": [
+      "construction",
+      "fod_debris"
+    ]
+  },
+  "13c18e2085a644a59d31dcc73e593bc1": {
+    "token": "13c18e2085a644a59d31dcc73e593bc1",
+    "odd_attributes": {
+      "weather": "overcast",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "dry",
+      "sensor_integrity": "nominal"
+    },
+    "road_topology": {
+      "scene_type": "intersection",
+      "lane_configuration": "intersection_4way",
+      "drivable_area_status": "nominal",
+      "traffic_controls": [
+        "stop_sign"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "none",
+      "lead_vehicle_behavior": "none",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "prediction_uncertainty",
+      "ego_required_action": "slow_down",
+      "blocking_factor": "none",
+      "risk_score": 6
+    },
+    "wod_e2e_tags": [
+      "intersection_complex"
+    ]
+  },
+  "cac36ac953b1491d8249571bb607f5c0": {
+    "token": "cac36ac953b1491d8249571bb607f5c0",
+    "odd_attributes": {
+      "weather": "clear",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "dry",
+      "sensor_integrity": "nominal"
+    },
+    "road_topology": {
+      "scene_type": "urban_street",
+      "lane_configuration": "straight",
+      "drivable_area_status": "restricted_by_static_obstacle",
+      "traffic_controls": [
+        "none"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "none",
+      "lead_vehicle_behavior": "none",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "violation_of_map_topology",
+      "ego_required_action": "slow_down",
+      "blocking_factor": "none",
+      "risk_score": 3
+    },
+    "wod_e2e_tags": []
+  },
+  "dc73cecaa8ac47a6ab606c834829fee9": {
+    "token": "dc73cecaa8ac47a6ab606c834829fee9",
+    "odd_attributes": {
+      "weather": "overcast",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "dry",
+      "sensor_integrity": "nominal"
+    },
+    "road_topology": {
+      "scene_type": "urban_street",
+      "lane_configuration": "straight",
+      "drivable_area_status": "restricted_by_static_obstacle",
+      "traffic_controls": [
+        "none"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "none",
+      "lead_vehicle_behavior": "none",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "violation_of_map_topology",
+      "ego_required_action": "nudge_around_static_obstacle",
+      "blocking_factor": "debris",
+      "risk_score": 8
+    },
+    "wod_e2e_tags": [
+      "fod_debris"
+    ]
+  },
+  "14384b3ce9d243ce827bf0c1598dd35f": {
+    "token": "14384b3ce9d243ce827bf0c1598dd35f",
+    "odd_attributes": {
+      "weather": "rain",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "wet",
+      "sensor_integrity": "nominal"
+    },
+    "road_topology": {
+      "scene_type": "urban_street",
+      "lane_configuration": "straight",
+      "drivable_area_status": "nominal",
+      "traffic_controls": [
+        "none"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "none",
+      "lead_vehicle_behavior": "none",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "perception_degradation",
+      "ego_required_action": "lane_keep",
+      "blocking_factor": "none",
+      "risk_score": 6
+    },
+    "wod_e2e_tags": []
+  },
+  "0645f4fd924941059338152653eb6489": {
+    "token": "0645f4fd924941059338152653eb6489",
+    "odd_attributes": {
+      "weather": "clear",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "dry",
+      "sensor_integrity": "nominal"
+    },
+    "road_topology": {
+      "scene_type": "construction_zone",
+      "lane_configuration": "straight",
+      "drivable_area_status": "restricted_by_static_obstacle",
+      "traffic_controls": [
+        "none"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "roadside_static",
+      "lead_vehicle_behavior": "none",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "construction_machinery"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "violation_of_map_topology",
+      "ego_required_action": "lane_keep",
+      "blocking_factor": "construction_barrier",
+      "risk_score": 7
+    },
+    "wod_e2e_tags": [
+      "construction",
+      "lane_diversion"
+    ]
+  },
+  "0fc008ed23194ee5b5b3b54983c7a9fd": {
+    "token": "0fc008ed23194ee5b5b3b54983c7a9fd",
+    "odd_attributes": {
+      "weather": "heavy_rain",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "wet",
+      "sensor_integrity": "droplets_on_lens"
+    },
+    "road_topology": {
+      "scene_type": "urban_street",
+      "lane_configuration": "straight",
+      "drivable_area_status": "nominal",
+      "traffic_controls": [
+        "none"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "none",
+      "lead_vehicle_behavior": "none",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "perception_degradation",
+      "ego_required_action": "slow_down",
+      "blocking_factor": "none",
+      "risk_score": 7
+    },
+    "wod_e2e_tags": [
+      "weather_adverse"
+    ]
+  },
+  "135638e1666e46a7b492dedad5777ff0": {
+    "token": "135638e1666e46a7b492dedad5777ff0",
+    "odd_attributes": {
+      "weather": "heavy_rain",
+      "time_of_day": "day",
+      "lighting_condition": "glare_high",
+      "road_surface_friction": "wet",
+      "sensor_integrity": "droplets_on_lens"
+    },
+    "road_topology": {
+      "scene_type": "urban_street",
+      "lane_configuration": "intersection_4way",
+      "drivable_area_status": "nominal",
+      "traffic_controls": [
+        "red_light"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "none",
+      "lead_vehicle_behavior": "stalled",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "perception_degradation",
+      "ego_required_action": "stop",
+      "blocking_factor": "none",
+      "risk_score": 8
+    },
+    "wod_e2e_tags": [
+      "weather_adverse"
+    ]
+  },
+  "b92d5652514345c9b3427c433df1bd8b": {
+    "token": "b92d5652514345c9b3427c433df1bd8b",
+    "odd_attributes": {
+      "weather": "clear",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "dry",
+      "sensor_integrity": "nominal"
+    },
+    "road_topology": {
+      "scene_type": "urban_street",
+      "lane_configuration": "straight",
+      "drivable_area_status": "nominal",
+      "traffic_controls": [
+        "none"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "none",
+      "lead_vehicle_behavior": "nominal",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "perception_degradation",
+      "ego_required_action": "lane_keep",
+      "blocking_factor": "none",
+      "risk_score": 4
+    },
+    "wod_e2e_tags": []
+  },
+  "fe5b1b2e8aa2430e90c5c90825f9f1f2": {
+    "token": "fe5b1b2e8aa2430e90c5c90825f9f1f2",
+    "odd_attributes": {
+      "weather": "rain",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "wet",
+      "sensor_integrity": "droplets_on_lens"
+    },
+    "road_topology": {
+      "scene_type": "construction_zone",
+      "lane_configuration": "straight",
+      "drivable_area_status": "restricted_by_static_obstacle",
+      "traffic_controls": [
+        "none"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "none",
+      "lead_vehicle_behavior": "none",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "violation_of_map_topology",
+      "ego_required_action": "lane_keep",
+      "blocking_factor": "construction_barrier",
+      "risk_score": 8
+    },
+    "wod_e2e_tags": [
+      "construction",
+      "weather_adverse"
+    ]
+  },
+  "6ac07a4efec04453b7326d3a425c7b79": {
+    "token": "6ac07a4efec04453b7326d3a425c7b79",
+    "odd_attributes": {
+      "weather": "rain",
+      "time_of_day": "day",
+      "lighting_condition": "shadow_contrast",
+      "road_surface_friction": "wet",
+      "sensor_integrity": "droplets_on_lens"
+    },
+    "road_topology": {
+      "scene_type": "urban_street",
+      "lane_configuration": "straight",
+      "drivable_area_status": "nominal",
+      "traffic_controls": [
+        "none"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "none",
+      "lead_vehicle_behavior": "none",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "perception_degradation",
+      "ego_required_action": "lane_keep",
+      "blocking_factor": "none",
+      "risk_score": 6
+    },
+    "wod_e2e_tags": [
+      "weather_adverse",
+      "sensor_failure"
+    ]
+  },
+  "5c5b6e7ea6dd4560b281eabb5280c6c8": {
+    "token": "5c5b6e7ea6dd4560b281eabb5280c6c8",
+    "odd_attributes": {
+      "weather": "overcast",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "dry",
+      "sensor_integrity": "nominal"
+    },
+    "road_topology": {
+      "scene_type": "urban_street",
+      "lane_configuration": "straight",
+      "drivable_area_status": "nominal",
+      "traffic_controls": [
+        "none"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "roadside_static",
+      "lead_vehicle_behavior": "nominal",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "prediction_uncertainty",
+      "ego_required_action": "lane_keep",
+      "blocking_factor": "none",
+      "risk_score": 5
+    },
+    "wod_e2e_tags": [
+      "vru_hazard"
+    ]
+  },
+  "43f05ac397484672b9bdf86dcc0b0289": {
+    "token": "43f05ac397484672b9bdf86dcc0b0289",
+    "odd_attributes": {
+      "weather": "overcast",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "wet",
+      "sensor_integrity": "droplets_on_lens"
+    },
+    "road_topology": {
+      "scene_type": "construction_zone",
+      "lane_configuration": "straight",
+      "drivable_area_status": "restricted_by_static_obstacle",
+      "traffic_controls": [
+        "none"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "none",
+      "lead_vehicle_behavior": "nominal",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "perception_degradation",
+      "ego_required_action": "lane_keep",
+      "blocking_factor": "construction_barrier",
+      "risk_score": 7
+    },
+    "wod_e2e_tags": [
+      "construction",
+      "weather_adverse",
+      "sensor_failure"
+    ]
+  },
+  "a2bfb35bb2504c038f303ec1ce91952d": {
+    "token": "a2bfb35bb2504c038f303ec1ce91952d",
+    "odd_attributes": {
+      "weather": "rain",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "wet",
+      "sensor_integrity": "droplets_on_lens"
+    },
+    "road_topology": {
+      "scene_type": "urban_street",
+      "lane_configuration": "intersection_4way",
+      "drivable_area_status": "nominal",
+      "traffic_controls": [
+        "yellow_light"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "none",
+      "lead_vehicle_behavior": "nominal",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "perception_degradation",
+      "ego_required_action": "lane_keep",
+      "blocking_factor": "none",
+      "risk_score": 7
+    },
+    "wod_e2e_tags": [
+      "weather_adverse"
+    ]
+  },
+  "e09e59dc4a6047ddbfcc8e04a803439f": {
+    "token": "e09e59dc4a6047ddbfcc8e04a803439f",
+    "odd_attributes": {
+      "weather": "rain",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "wet",
+      "sensor_integrity": "droplets_on_lens"
+    },
+    "road_topology": {
+      "scene_type": "construction_zone",
+      "lane_configuration": "intersection_4way",
+      "drivable_area_status": "restricted_by_static_obstacle",
+      "traffic_controls": [
+        "stop_sign"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "none",
+      "lead_vehicle_behavior": "nominal",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "construction_machinery"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "violation_of_map_topology",
+      "ego_required_action": "stop",
+      "blocking_factor": "construction_barrier",
+      "risk_score": 8
+    },
+    "wod_e2e_tags": [
+      "construction",
+      "weather_adverse",
+      "lane_diversion"
+    ]
+  },
+  "c6305e7ff33a40bdbc1c67252bae24c9": {
+    "token": "c6305e7ff33a40bdbc1c67252bae24c9",
+    "odd_attributes": {
+      "weather": "rain",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "wet",
+      "sensor_integrity": "droplets_on_lens"
+    },
+    "road_topology": {
+      "scene_type": "urban_street",
+      "lane_configuration": "straight",
+      "drivable_area_status": "nominal",
+      "traffic_controls": [
+        "none"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "none",
+      "lead_vehicle_behavior": "nominal",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "perception_degradation",
+      "ego_required_action": "lane_keep",
+      "blocking_factor": "none",
+      "risk_score": 6
+    },
+    "wod_e2e_tags": [
+      "weather_adverse"
+    ]
+  },
+  "4f5d5716e3c84ff4b1712fe3ca2cddef": {
+    "token": "4f5d5716e3c84ff4b1712fe3ca2cddef",
+    "odd_attributes": {
+      "weather": "clear",
+      "time_of_day": "night",
+      "lighting_condition": "streetlights_only",
+      "road_surface_friction": "wet",
+      "sensor_integrity": "lens_flare"
+    },
+    "road_topology": {
+      "scene_type": "urban_street",
+      "lane_configuration": "straight",
+      "drivable_area_status": "nominal",
+      "traffic_controls": [
+        "none"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "none",
+      "lead_vehicle_behavior": "none",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "perception_degradation",
+      "ego_required_action": "lane_keep",
+      "blocking_factor": "none",
+      "risk_score": 5
+    },
+    "wod_e2e_tags": [
+      "weather_adverse",
+      "sensor_failure"
+    ]
+  },
+  "2a59c40b4b5d44fabe19db697955ce70": {
+    "token": "2a59c40b4b5d44fabe19db697955ce70",
+    "odd_attributes": {
+      "weather": "clear",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "dry",
+      "sensor_integrity": "nominal"
+    },
+    "road_topology": {
+      "scene_type": "construction_zone",
+      "lane_configuration": "straight",
+      "drivable_area_status": "restricted_by_static_obstacle",
+      "traffic_controls": [
+        "red_light"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "roadside_static",
+      "lead_vehicle_behavior": "nominal",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "violation_of_map_topology",
+      "ego_required_action": "stop",
+      "blocking_factor": "construction_barrier",
+      "risk_score": 5
+    },
+    "wod_e2e_tags": [
+      "construction",
+      "lane_diversion"
+    ]
+  },
+  "75d4eb5cbf1f4dea9aa85938ae0c041a": {
+    "token": "75d4eb5cbf1f4dea9aa85938ae0c041a",
+    "odd_attributes": {
+      "weather": "rain",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "wet",
+      "sensor_integrity": "droplets_on_lens"
+    },
+    "road_topology": {
+      "scene_type": "construction_zone",
+      "lane_configuration": "intersection_4way",
+      "drivable_area_status": "nominal",
+      "traffic_controls": [
+        "green_light",
+        "red_light"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "roadside_static",
+      "lead_vehicle_behavior": "nominal",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "prediction_uncertainty",
+      "ego_required_action": "stop",
+      "blocking_factor": "none",
+      "risk_score": 5
+    },
+    "wod_e2e_tags": [
+      "construction",
+      "weather_adverse"
+    ]
+  },
+  "d5d97f6274724ec388f08766401a7bfc": {
+    "token": "d5d97f6274724ec388f08766401a7bfc",
+    "odd_attributes": {
+      "weather": "clear",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "dry",
+      "sensor_integrity": "nominal"
+    },
+    "road_topology": {
+      "scene_type": "construction_zone",
+      "lane_configuration": "straight",
+      "drivable_area_status": "restricted_by_static_obstacle",
+      "traffic_controls": [
+        "yield_sign"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "none",
+      "lead_vehicle_behavior": "none",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "violation_of_map_topology",
+      "ego_required_action": "lane_keep",
+      "blocking_factor": "construction_barrier",
+      "risk_score": 6
+    },
+    "wod_e2e_tags": [
+      "construction",
+      "lane_diversion"
+    ]
+  },
+  "b675b4b28bb9442a9009bdf6a1c758f3": {
+    "token": "b675b4b28bb9442a9009bdf6a1c758f3",
+    "odd_attributes": {
+      "weather": "rain",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "wet",
+      "sensor_integrity": "droplets_on_lens"
+    },
+    "road_topology": {
+      "scene_type": "intersection",
+      "lane_configuration": "intersection_4way",
+      "drivable_area_status": "nominal",
+      "traffic_controls": [
+        "red_light"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "none",
+      "lead_vehicle_behavior": "none",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "perception_degradation",
+      "ego_required_action": "stop",
+      "blocking_factor": "none",
+      "risk_score": 8
+    },
+    "wod_e2e_tags": [
+      "intersection_complex",
+      "weather_adverse"
+    ]
+  },
+  "2cb385a419864e18aa8e6cb2a80bfaa9": {
+    "token": "2cb385a419864e18aa8e6cb2a80bfaa9",
+    "odd_attributes": {
+      "weather": "rain",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "wet",
+      "sensor_integrity": "droplets_on_lens"
+    },
+    "road_topology": {
+      "scene_type": "urban_street",
+      "lane_configuration": "straight",
+      "drivable_area_status": "nominal",
+      "traffic_controls": [
+        "none"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "jaywalking_hesitant",
+      "lead_vehicle_behavior": "nominal",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "perception_degradation",
+      "ego_required_action": "lane_keep",
+      "blocking_factor": "none",
+      "risk_score": 7
+    },
+    "wod_e2e_tags": [
+      "weather_adverse",
+      "vru_hazard"
+    ]
+  },
+  "8fe8b29e6e8641f28aa753263f75a180": {
+    "token": "8fe8b29e6e8641f28aa753263f75a180",
+    "odd_attributes": {
+      "weather": "rain",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "wet",
+      "sensor_integrity": "droplets_on_lens"
+    },
+    "road_topology": {
+      "scene_type": "urban_street",
+      "lane_configuration": "straight",
+      "drivable_area_status": "nominal",
+      "traffic_controls": [
+        "none"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "none",
+      "lead_vehicle_behavior": "nominal",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "perception_degradation",
+      "ego_required_action": "lane_keep",
+      "blocking_factor": "none",
+      "risk_score": 7
+    },
+    "wod_e2e_tags": [
+      "weather_adverse"
+    ]
+  },
+  "1f048fa210c64e80b9d57e3dc757702c": {
+    "token": "1f048fa210c64e80b9d57e3dc757702c",
+    "odd_attributes": {
+      "weather": "rain",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "wet",
+      "sensor_integrity": "droplets_on_lens"
+    },
+    "road_topology": {
+      "scene_type": "urban_street",
+      "lane_configuration": "straight",
+      "drivable_area_status": "nominal",
+      "traffic_controls": [
+        "none"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "none",
+      "lead_vehicle_behavior": "none",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "perception_degradation",
+      "ego_required_action": "lane_keep",
+      "blocking_factor": "none",
+      "risk_score": 7
+    },
+    "wod_e2e_tags": [
+      "weather_adverse"
+    ]
+  },
+  "923c402a3b144655858d07292ebb44c8": {
+    "token": "923c402a3b144655858d07292ebb44c8",
+    "odd_attributes": {
+      "weather": "clear",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "dry",
+      "sensor_integrity": "nominal"
+    },
+    "road_topology": {
+      "scene_type": "urban_street",
+      "lane_configuration": "straight",
+      "drivable_area_status": "nominal",
+      "traffic_controls": [
+        "none"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "none",
+      "lead_vehicle_behavior": "none",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "none",
+      "ego_required_action": "lane_keep",
+      "blocking_factor": "none",
+      "risk_score": 6
+    },
+    "wod_e2e_tags": [
+      "construction"
+    ]
+  },
+  "ef1f55cb0939401689e65114fa99f56f": {
+    "token": "ef1f55cb0939401689e65114fa99f56f",
+    "odd_attributes": {
+      "weather": "rain",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "wet",
+      "sensor_integrity": "droplets_on_lens"
+    },
+    "road_topology": {
+      "scene_type": "urban_street",
+      "lane_configuration": "intersection_4way",
+      "drivable_area_status": "blocked_by_dynamic_object",
+      "traffic_controls": [
+        "red_light"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "jaywalking_fast",
+      "lead_vehicle_behavior": "none",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "rule_violation",
+      "ego_required_action": "stop",
+      "blocking_factor": "pedestrian",
+      "risk_score": 8
+    },
+    "wod_e2e_tags": [
+      "vru_hazard",
+      "weather_adverse",
+      "intersection_complex"
+    ]
+  },
+  "95619e3927234382802b13a3942cea07": {
+    "token": "95619e3927234382802b13a3942cea07",
+    "odd_attributes": {
+      "weather": "clear",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "dry",
+      "sensor_integrity": "nominal"
+    },
+    "road_topology": {
+      "scene_type": "intersection",
+      "lane_configuration": "intersection_4way",
+      "drivable_area_status": "nominal",
+      "traffic_controls": [
+        "red_light"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "legal_crossing",
+      "lead_vehicle_behavior": "nominal",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "none",
+      "ego_required_action": "stop",
+      "blocking_factor": "pedestrian",
+      "risk_score": 8
+    },
+    "wod_e2e_tags": [
+      "intersection_complex",
+      "vru_hazard"
+    ]
+  },
+  "6f9518216ad84c259251dad5b09461d6": {
+    "token": "6f9518216ad84c259251dad5b09461d6",
+    "odd_attributes": {
+      "weather": "rain",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "wet",
+      "sensor_integrity": "droplets_on_lens"
+    },
+    "road_topology": {
+      "scene_type": "construction_zone",
+      "lane_configuration": "straight",
+      "drivable_area_status": "restricted_by_static_obstacle",
+      "traffic_controls": [
+        "none"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "none",
+      "lead_vehicle_behavior": "none",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "construction_machinery"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "none",
+      "ego_required_action": "slow_down",
+      "blocking_factor": "construction_barrier",
+      "risk_score": 8
+    },
+    "wod_e2e_tags": [
+      "construction",
+      "lane_diversion",
+      "weather_adverse"
+    ]
+  },
+  "f4a2c7c37bc84ff9a75461b41e5c405b": {
+    "token": "f4a2c7c37bc84ff9a75461b41e5c405b",
+    "odd_attributes": {
+      "weather": "clear",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "dry",
+      "sensor_integrity": "nominal"
+    },
+    "road_topology": {
+      "scene_type": "urban_street",
+      "lane_configuration": "intersection_t_junction",
+      "drivable_area_status": "nominal",
+      "traffic_controls": [
+        "red_light"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "cyclist_in_lane",
+      "lead_vehicle_behavior": "stalled",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "prediction_uncertainty",
+      "ego_required_action": "stop",
+      "blocking_factor": "vehicle",
+      "risk_score": 5
+    },
+    "wod_e2e_tags": [
+      "intersection_complex",
+      "vru_hazard"
+    ]
+  },
+  "dd83fee3ead44981b1294903987fba40": {
+    "token": "dd83fee3ead44981b1294903987fba40",
+    "odd_attributes": {
+      "weather": "clear",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "dry",
+      "sensor_integrity": "nominal"
+    },
+    "road_topology": {
+      "scene_type": "construction_zone",
+      "lane_configuration": "straight",
+      "drivable_area_status": "restricted_by_static_obstacle",
+      "traffic_controls": [
+        "none"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "none",
+      "lead_vehicle_behavior": "nominal",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "violation_of_map_topology",
+      "ego_required_action": "nudge_around_static_obstacle",
+      "blocking_factor": "construction_barrier",
+      "risk_score": 8
+    },
+    "wod_e2e_tags": [
+      "construction",
+      "lane_diversion"
+    ]
+  },
+  "a32c7d6ff3504970b14f3e75768da72a": {
+    "token": "a32c7d6ff3504970b14f3e75768da72a",
+    "odd_attributes": {
+      "weather": "clear",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "dry",
+      "sensor_integrity": "nominal"
+    },
+    "road_topology": {
+      "scene_type": "urban_street",
+      "lane_configuration": "curve",
+      "drivable_area_status": "nominal",
+      "traffic_controls": [
+        "none"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "none",
+      "lead_vehicle_behavior": "none",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "none",
+      "ego_required_action": "lane_change",
+      "blocking_factor": "none",
+      "risk_score": 5
+    },
+    "wod_e2e_tags": []
+  },
+  "8933c82d1a084941bb63e0d72143338c": {
+    "token": "8933c82d1a084941bb63e0d72143338c",
+    "odd_attributes": {
+      "weather": "clear",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "dry",
+      "sensor_integrity": "nominal"
+    },
+    "road_topology": {
+      "scene_type": "urban_street",
+      "lane_configuration": "straight",
+      "drivable_area_status": "restricted_by_static_obstacle",
+      "traffic_controls": [
+        "none"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "none",
+      "lead_vehicle_behavior": "nominal",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "none",
+      "ego_required_action": "lane_keep",
+      "blocking_factor": "construction_barrier",
+      "risk_score": 5
+    },
+    "wod_e2e_tags": [
+      "construction",
+      "lane_diversion"
+    ]
+  },
+  "64ba8182ed7f4690aecb99aeb69b178a": {
+    "token": "64ba8182ed7f4690aecb99aeb69b178a",
+    "odd_attributes": {
+      "weather": "clear",
+      "time_of_day": "night",
+      "lighting_condition": "streetlights_only",
+      "road_surface_friction": "wet",
+      "sensor_integrity": "nominal"
+    },
+    "road_topology": {
+      "scene_type": "urban_street",
+      "lane_configuration": "straight",
+      "drivable_area_status": "nominal",
+      "traffic_controls": [
+        "none"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "none",
+      "lead_vehicle_behavior": "none",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "prediction_uncertainty",
+      "ego_required_action": "slow_down",
+      "blocking_factor": "none",
+      "risk_score": 7
+    },
+    "wod_e2e_tags": [
+      "weather_adverse"
+    ]
+  },
+  "bda4f0fb063b43648614009183ddb205": {
+    "token": "bda4f0fb063b43648614009183ddb205",
+    "odd_attributes": {
+      "weather": "overcast",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "dry",
+      "sensor_integrity": "lens_flare"
+    },
+    "road_topology": {
+      "scene_type": "urban_street",
+      "lane_configuration": "curve",
+      "drivable_area_status": "restricted_by_static_obstacle",
+      "traffic_controls": [
+        "none"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "none",
+      "lead_vehicle_behavior": "none",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "violation_of_map_topology",
+      "ego_required_action": "nudge_around_static_obstacle",
+      "blocking_factor": "construction_barrier",
+      "risk_score": 5
+    },
+    "wod_e2e_tags": [
+      "construction",
+      "lane_diversion"
+    ]
+  },
+  "b4bff2b0e4774147ac53fb96ff9317b5": {
+    "token": "b4bff2b0e4774147ac53fb96ff9317b5",
+    "odd_attributes": {
+      "weather": "overcast",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "dry",
+      "sensor_integrity": "nominal"
+    },
+    "road_topology": {
+      "scene_type": "construction_zone",
+      "lane_configuration": "straight",
+      "drivable_area_status": "restricted_by_static_obstacle",
+      "traffic_controls": [
+        "none"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "none",
+      "lead_vehicle_behavior": "nominal",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "none",
+      "ego_required_action": "lane_keep",
+      "blocking_factor": "construction_barrier",
+      "risk_score": 5
+    },
+    "wod_e2e_tags": [
+      "construction"
+    ]
+  },
+  "4ba33dc3548343498f27a98a9d6b31e6": {
+    "token": "4ba33dc3548343498f27a98a9d6b31e6",
+    "odd_attributes": {
+      "weather": "overcast",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "dry",
+      "sensor_integrity": "nominal"
+    },
+    "road_topology": {
+      "scene_type": "intersection",
+      "lane_configuration": "intersection_4way",
+      "drivable_area_status": "nominal",
+      "traffic_controls": [
+        "green_light"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "jaywalking_hesitant",
+      "lead_vehicle_behavior": "nominal",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "prediction_uncertainty",
+      "ego_required_action": "lane_keep",
+      "blocking_factor": "pedestrian",
+      "risk_score": 5
+    },
+    "wod_e2e_tags": [
+      "vru_hazard",
+      "intersection_complex"
+    ]
+  },
+  "401897a3cda547d983c51b5eb588597e": {
+    "token": "401897a3cda547d983c51b5eb588597e",
+    "odd_attributes": {
+      "weather": "clear",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "dry",
+      "sensor_integrity": "motion_blur"
+    },
+    "road_topology": {
+      "scene_type": "rural_road",
+      "lane_configuration": "curve",
+      "drivable_area_status": "nominal",
+      "traffic_controls": [
+        "none"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "none",
+      "lead_vehicle_behavior": "none",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "none",
+      "ego_required_action": "lane_keep",
+      "blocking_factor": "none",
+      "risk_score": 2
+    },
+    "wod_e2e_tags": []
+  },
+  "68d55043775840cbacb2d9d2bf15ad4a": {
+    "token": "68d55043775840cbacb2d9d2bf15ad4a",
+    "odd_attributes": {
+      "weather": "clear",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "dry",
+      "sensor_integrity": "nominal"
+    },
+    "road_topology": {
+      "scene_type": "urban_street",
+      "lane_configuration": "straight",
+      "drivable_area_status": "nominal",
+      "traffic_controls": [
+        "stop_sign"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "none",
+      "lead_vehicle_behavior": "none",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "none",
+      "ego_required_action": "lane_keep",
+      "blocking_factor": "none",
+      "risk_score": 1
+    },
+    "wod_e2e_tags": []
+  },
+  "33673e8b71b54b6b8aba19674c4d364b": {
+    "token": "33673e8b71b54b6b8aba19674c4d364b",
+    "odd_attributes": {
+      "weather": "clear",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "dry",
+      "sensor_integrity": "nominal"
+    },
+    "road_topology": {
+      "scene_type": "urban_street",
+      "lane_configuration": "straight",
+      "drivable_area_status": "nominal",
+      "traffic_controls": [
+        "none"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "none",
+      "lead_vehicle_behavior": "none",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "none",
+      "ego_required_action": "lane_keep",
+      "blocking_factor": "none",
+      "risk_score": 1
+    },
+    "wod_e2e_tags": [
+      "construction"
+    ]
+  },
+  "7b58c0925d5046c0bdaa962662340cd1": {
+    "token": "7b58c0925d5046c0bdaa962662340cd1",
+    "odd_attributes": {
+      "weather": "clear",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "dry",
+      "sensor_integrity": "nominal"
+    },
+    "road_topology": {
+      "scene_type": "urban_street",
+      "lane_configuration": "intersection_4way",
+      "drivable_area_status": "nominal",
+      "traffic_controls": [
+        "green_light"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "none",
+      "lead_vehicle_behavior": "nominal",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "occlusion_risk",
+      "ego_required_action": "lane_keep",
+      "blocking_factor": "none",
+      "risk_score": 4
+    },
+    "wod_e2e_tags": []
+  },
+  "14abe931967944308e54fc90b21b4d5d": {
+    "token": "14abe931967944308e54fc90b21b4d5d",
+    "odd_attributes": {
+      "weather": "overcast",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "dry",
+      "sensor_integrity": "nominal"
+    },
+    "road_topology": {
+      "scene_type": "parking_lot",
+      "lane_configuration": "curve",
+      "drivable_area_status": "nominal",
+      "traffic_controls": [
+        "none"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "none",
+      "lead_vehicle_behavior": "none",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "occlusion_risk",
+      "ego_required_action": "lane_keep",
+      "blocking_factor": "none",
+      "risk_score": 4
+    },
+    "wod_e2e_tags": []
+  },
+  "58a4b98af7bf4cff9ee5667b103d0f12": {
+    "token": "58a4b98af7bf4cff9ee5667b103d0f12",
+    "odd_attributes": {
+      "weather": "clear",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "dry",
+      "sensor_integrity": "nominal"
+    },
+    "road_topology": {
+      "scene_type": "urban_street",
+      "lane_configuration": "straight",
+      "drivable_area_status": "nominal",
+      "traffic_controls": [
+        "none"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "jaywalking_fast",
+      "lead_vehicle_behavior": "nominal",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "prediction_uncertainty",
+      "ego_required_action": "slow_down",
+      "blocking_factor": "none",
+      "risk_score": 8
+    },
+    "wod_e2e_tags": [
+      "vru_hazard"
+    ]
+  },
+  "28d95d22c2e94cc4a8b3dab896e4b70b": {
+    "token": "28d95d22c2e94cc4a8b3dab896e4b70b",
+    "odd_attributes": {
+      "weather": "clear",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "dry",
+      "sensor_integrity": "nominal"
+    },
+    "road_topology": {
+      "scene_type": "urban_street",
+      "lane_configuration": "intersection_t_junction",
+      "drivable_area_status": "nominal",
+      "traffic_controls": [
+        "none"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "none",
+      "lead_vehicle_behavior": "none",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "occlusion_risk",
+      "ego_required_action": "slow_down",
+      "blocking_factor": "none",
+      "risk_score": 6
+    },
+    "wod_e2e_tags": []
+  },
+  "c4bfd781001842f98f2677379c079e29": {
+    "token": "c4bfd781001842f98f2677379c079e29",
+    "odd_attributes": {
+      "weather": "rain",
+      "time_of_day": "day",
+      "lighting_condition": "nominal",
+      "road_surface_friction": "wet",
+      "sensor_integrity": "droplets_on_lens"
+    },
+    "road_topology": {
+      "scene_type": "urban_street",
+      "lane_configuration": "straight",
+      "drivable_area_status": "nominal",
+      "traffic_controls": [
+        "none"
+      ]
+    },
+    "key_interacting_agents": {
+      "vru_status": "none",
+      "lead_vehicle_behavior": "none",
+      "adjacent_vehicle_behavior": "none",
+      "special_agent_class": "none"
+    },
+    "scenario_criticality": {
+      "primary_challenge": "prediction_uncertainty",
+      "ego_required_action": "slow_down",
+      "blocking_factor": "none",
+      "risk_score": 6
+    },
+    "wod_e2e_tags": [
+      "vru_hazard",
+      "weather_adverse"
+    ]
+  }
+}

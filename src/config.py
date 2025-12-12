@@ -4,8 +4,8 @@ from pathlib import Path
 
 # Update this path to where you extracted the v1.0-mini folder
 # It should contain subfolders: maps, samples, sweeps, v1.0-mini
-NUSCENES_DATAROOT = "/mnt/d/Nuscenes_dataset"  # MODIFY THIS PATH AS NEEDED "/path/to/your/nuscenes"
-NUSCENES_VERSION = "v1.0-mini"
+NUSCENES_DATAROOT = "nuscenes_data"  # MODIFY THIS PATH AS NEEDED "/path/to/your/nuscenes"
+NUSCENES_VERSION = "v1.0-trainval"
 
 # MODIFIED: Front-Hemisphere Only
 # We dropped CAM_BACK, CAM_BACK_LEFT, CAM_BACK_RIGHT

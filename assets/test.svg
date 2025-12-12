@@ -1,0 +1,93 @@
+<svg width="850" height="500" viewBox="0 0 850 500" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <!-- Gradients -->
+            <linearGradient id="nominalGradient" x1="0" x2="1" y1="0" y2="0">
+                <stop offset="0%" stop-color="#e3f2fd" stop-opacity="0.8"></stop>
+                <stop offset="100%" stop-color="#e3f2fd" stop-opacity="0.1"></stop>
+            </linearGradient>
+            <linearGradient id="tailGradient" x1="0" x2="1" y1="0" y2="0">
+                <stop offset="0%" stop-color="#fff3e0" stop-opacity="0.1"></stop>
+                <stop offset="100%" stop-color="#ffe0b2" stop-opacity="0.8"></stop>
+            </linearGradient>
+            <!-- Markers -->
+            <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+                <path d="M0,0 L0,6 L9,3 z" fill="#333"></path>
+            </marker>
+        </defs>
+
+        <!-- AXES -->
+        <!-- Y Axis -->
+        <line x1="50" y1="450" x2="50" y2="50" stroke="#333" stroke-width="2" marker-end="url(#arrow)"></line>
+        <text x="35" y="40" font-size="14" fill="#333" font-weight="bold" text-anchor="middle">Log Frequency</text>
+        
+        <!-- X Axis -->
+        <line x1="50" y1="450" x2="800" y2="450" stroke="#333" stroke-width="2" marker-end="url(#arrow)"></line>
+        <text x="700" y="485" font-size="14" fill="#333" font-weight="bold">Scenario Complexity / Entropy</text>
+
+        <!-- PLOT DATA -->
+        <!-- The Curve (Exponential Decay) -->
+        <path d="M 50 60 C 50 350, 150 440, 800 445" fill="none" stroke="#2c3e50" stroke-width="4"></path>
+
+        <!-- ZONE 1: NOMINAL (Left) -->
+        <!-- Fill Area -->
+        <path d="M 50 60 C 50 350, 150 440, 250 442 L 250 450 L 50 450 Z" fill="url(#nominalGradient)"></path>
+        
+        <!-- ZONE 2: LONG TAIL (Right) -->
+        <!-- Fill Area -->
+        <path d="M 250 442 C 400 444, 600 445, 800 445 L 800 450 L 250 450 Z" fill="url(#tailGradient)"></path>
+
+        <!-- SEPARATOR LINE -->
+        <line x1="250" y1="50" x2="250" y2="450" stroke="#7f8c8d" stroke-width="2" stroke-dasharray="5,5"></line>
+
+        <!-- ANNOTATIONS: NOMINAL -->
+        <g transform="translate(100, 200)">
+            <text x="0" y="0" font-size="18" fill="#1565c0" font-weight="bold">"The Head"</text>
+            <text x="0" y="25" font-size="14" fill="#555">Nominal Driving</text>
+            <text x="0" y="45" font-size="12" fill="#777" font-style="italic">(~99% of Data)</text>
+            
+            <!-- Examples -->
+            <text x="0" y="80" font-size="12" fill="#333">• Highway Cruising</text>
+            <text x="0" y="100" font-size="12" fill="#333">• Clear Weather</text>
+            <text x="0" y="120" font-size="12" fill="#333">• Stopped at Red Light</text>
+        </g>
+
+        <!-- ANNOTATIONS: LONG TAIL -->
+        <g transform="translate(450, 150)">
+            <text x="0" y="0" font-size="20" fill="#d35400" font-weight="bold">"The Long-Tail" (Dark Data)</text>
+            <text x="0" y="25" font-size="14" fill="#555">Safety-Critical Edge Cases</text>
+            <text x="0" y="45" font-size="12" fill="#777" font-style="italic">(&lt;1% of Data, High Value)</text>
+
+            <!-- Connecting Lines to the tail -->
+            <line x1="-20" y1="80" x2="-100" y2="280" stroke="#d35400" stroke-width="1"></line>
+            <circle cx="-100" cy="280" r="3" fill="#d35400"></circle>
+            
+            <line x1="80" y1="80" x2="100" y2="285" stroke="#d35400" stroke-width="1"></line>
+            <circle cx="100" cy="285" r="3" fill="#d35400"></circle>
+
+            <line x1="180" y1="80" x2="280" y2="290" stroke="#d35400" stroke-width="1"></line>
+            <circle cx="280" cy="290" r="3" fill="#d35400"></circle>
+
+            <!-- Examples Boxes -->
+            <rect x="-40" y="70" width="130" height="25" rx="5" fill="#fff3e0" stroke="#d35400" stroke-width="1"></rect>
+            <text x="25" y="87" font-size="12" fill="#bf360c" text-anchor="middle">WOD: Construction</text>
+
+            <rect x="100" y="70" width="120" height="25" rx="5" fill="#fff3e0" stroke="#d35400" stroke-width="1"></rect>
+            <text x="160" y="87" font-size="12" fill="#bf360c" text-anchor="middle">WOD: VRU Hazard</text>
+
+            <rect x="230" y="70" width="130" height="25" rx="5" fill="#fff3e0" stroke="#d35400" stroke-width="1"></rect>
+            <text x="295" y="87" font-size="12" fill="#bf360c" text-anchor="middle">WOD: Glare/Rain</text>
+        </g>
+
+        <!-- METHOD COMPARISON -->
+        <!-- Bracket Top -->
+        <line x1="50" y1="40" x2="250" y2="40" stroke="#7f8c8d" stroke-width="2"></line>
+        <line x1="50" y1="35" x2="50" y2="45" stroke="#7f8c8d" stroke-width="2"></line>
+        <line x1="250" y1="35" x2="250" y2="45" stroke="#7f8c8d" stroke-width="2"></line>
+        <text x="150" y="30" font-size="12" fill="#555" text-anchor="middle">Current Human Labeling Limit</text>
+
+        <!-- Semantic Drive Label -->
+        <rect x="420" y="350" width="300" height="40" rx="5" fill="white" stroke="#2c3e50" stroke-width="2"></rect>
+        <text x="570" y="375" font-size="16" fill="#2c3e50" font-weight="bold" text-anchor="middle">Target: Semantic-Drive Mining</text>
+        <line x1="570" y1="390" x2="570" y2="440" stroke="#2c3e50" stroke-width="2" stroke-dasharray="3,3" marker-end="url(#arrow)"></line>
+
+    </svg>
