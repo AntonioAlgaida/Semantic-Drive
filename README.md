@@ -6,7 +6,7 @@
 </p>
 
 <p align="center">
-  <a href="https://arxiv.org/abs/TODO_INSERT_ARXIV_ID" target="_blank">
+  <a href="https://arxiv.org/abs/2512.12012" target="_blank">
     <img src="https://img.shields.io/badge/ArXiv-Paper-b31b1b.svg?style=flat-square" alt="ArXiv Paper">
   </a>
   <a href="https://huggingface.co/spaces/AntonioAlgaida/Semantic-Drive-Explorer" target="_blank">
@@ -403,11 +403,22 @@ If you use **Semantic-Drive** in your research, please cite our work:
 ```bibtex
 @misc{guillen2025semanticdrive,
   author = {Guillen-Perez, Antonio},
-  title = {Semantic-Drive: Democratizing Long-Tail Data Curation via Open-Vocabulary Grounding and Neuro-Symbolic VLM Consensus},
+	title = {{Semantic-Drive: Democratizing Long-Tail Data Curation via Open-Vocabulary Grounding and Neuro-Symbolic VLM Consensus}},
   year = {2025},
+	month = dec,
   publisher = {GitHub},
   journal = {GitHub repository},
   howpublished = {\url{https://github.com/AntonioAlgaida/Semantic-Drive}}
+}
+
+@article{Guillen-Perez2025Dec,
+	author = {Guillen-Perez, Antonio},
+	title = {{Semantic-Drive: Democratizing Long-Tail Data Curation via Open-Vocabulary Grounding and Neuro-Symbolic VLM Consensus}},
+	journal = {arXiv},
+	year = {2025},
+	month = dec,
+	eprint = {2512.12012},
+	doi = {10.48550/arXiv.2512.12012}
 }
 ```
 
