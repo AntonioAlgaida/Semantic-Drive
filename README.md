@@ -9,7 +9,7 @@
   <a href="https://arxiv.org/abs/2512.12012" target="_blank">
     <img src="https://img.shields.io/badge/ArXiv-Paper-b31b1b.svg?style=flat-square" alt="ArXiv Paper">
   </a>
-  <a href="https://huggingface.co/spaces/AntonioAlgaida/Semantic-Drive-Explorer" target="_blank">
+  <a href="https://huggingface.co/spaces/agnprz/Semantic-Drive-Explorer" target="_blank">
     <img src="https://img.shields.io/badge/🤗%20Hugging%20Face-Live%20Demo-yellow.svg?style=flat-square" alt="Live Demo">
   </a>
   <a href="https://huggingface.co/datasets/agnprz/semantic-drive-results" target="_blank">
@@ -30,13 +30,13 @@
 </p>
 
 <p align="center">
-  <img src="assets/figures/main_figure-1.png" width="50%">
+  <img src="assets/figures/main_figure-1.png" width="100%">
   <br>
   <em>Figure 1: Semantic-Drive Framework Overview. The system combines real-time object detection (YOLOE-11) with Neuro-Symbolic reasoning VLMs (Qwen3-VL, Kimi-VL) to mine safety-critical edge cases from raw autonomous vehicle video logs without cloud costs.</em>
 </p>  
 
 <p align="center">
-  <img src="assets/figures/long_tail.png" width="30%">
+  <img src="assets/figures/long_tail.png" width="80%">
   <br>
   <em>Figure 2: The "Dark Data" Crisis. While 99% of logs represent nominal driving, the critical 1% lies in the "Long Tail" (e.g., erratic VRUs, sensor degradation). Semantic-Drive automates the mining of this region without cloud costs.</em>
 </p>
@@ -127,7 +127,7 @@ The system employs a "Judge-Scout" architecture that separates perception into t
 We utilize **YOLOE-11** (Real-Time Open-Vocabulary Segmentation) to perform an initial visual sweep. It detects objects from the **WOD-E2E Taxonomy** (e.g., "construction barrel", "debris") with a high-recall threshold (0.15). This "Object Inventory" is converted to text and injected into the VLM's context window.
 
 <p align="center">
-  <img src="assets/figures/main_figure2-1.png" width="50%">
+  <img src="assets/figures/main_figure2-1.png" width="100%">
   <br>
   <em>Figure 3: Stage 1 - Symbolic Grounding with YOLOE-11. The object inventory is extracted and formatted for VLM consumption.</em>
 </p>
@@ -136,7 +136,7 @@ We utilize **YOLOE-11** (Real-Time Open-Vocabulary Segmentation) to perform an i
 An ensemble of **Reasoning VLMs** (Qwen3-VL, Kimi-VL, Gemma-3) processes the images and the symbolic inventory. They execute a **Chain-of-Thought (CoT)** process to verify detections ("Skepticism Policy"), assess environmental conditions, and determine causal risks (e.g., "Is the pedestrian interacting with the scene?").
 
 <p align="center">
-  <img src="assets/figures/figure3_cognitive_process-1.png" width="50%">
+  <img src="assets/figures/figure3_cognitive_process-1.png" width="100%">
   <br>
   <em>Figure 4: Stage 2 - Cognitive Analysis with Reasoning VLMs. The VLMs verify detections and assess scenario risks using Chain-of-Thought reasoning.</em>
 </p>
@@ -145,7 +145,7 @@ An ensemble of **Reasoning VLMs** (Qwen3-VL, Kimi-VL, Gemma-3) processes the ima
 A separate **Local LLM (Mistral-14B)** aggregates the reports from multiple scouts. It performs an **Inference-Time Search (Best-of-N)**, generating candidate scenarios and scoring them using a deterministic **Symbolic Reward Model** ($R(y)$). This filters out hallucinations that are not grounded in the YOLO inventory.
 
 <p align="center">
-  <img src="assets/figures/figure4_judge_consensus-1.png" width="50%">
+  <img src="assets/figures/figure4_judge_consensus-1.png" width="100%">
   <br>
   <em>Figure 5: Stage 3 - Inference-Time Consensus with the Judge. The LLM aggregates multiple scout reports and selects the most consistent scenario.</em>
 </p>
@@ -175,7 +175,7 @@ We benchmarked the system against a manually verified "Gold Set" of 108 challeng
 
 To facilitate reproducibility, we have released the data and an interactive explorer:
 
-*   **Live Demo (Hugging Face Space):** [Semantic-Drive Explorer](https://huggingface.co/spaces/AntonioAlgaida/Semantic-Drive-Explorer)
+*   **Live Demo (Hugging Face Space):** [Semantic-Drive Explorer](https://huggingface.co/spaces/agnprz/Semantic-Drive-Explorer)
 *   **Dataset (Hugging Face):** [Semantic-Drive Results (N=2,550)](https://huggingface.co/datasets/agnprz/semantic-drive-results)
 
 ## Setup and Reproducibility
