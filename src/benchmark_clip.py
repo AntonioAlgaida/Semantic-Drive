@@ -121,7 +121,13 @@ def main():
             image_features /= image_features.norm(dim=-1, keepdim=True)
             
             # Cosine Similarity
-            similarity = (100.0 * image_features @ text_features.T).softmax(dim=-1)
+            # OLD (Multi-Class / Competitive):
+            # similarity = (100.0 * image_features @ text_features.T).softmax(dim=-1)
+            
+            # NEW (Multi-Label / Independent):
+            # We use sigmoid to allow multiple tags to be active simultaneously
+            # Note: 100.0 scaling is standard for CLIP logits
+            similarity = (100.0 * image_features @ text_features.T).sigmoid()
             probs = similarity.cpu().numpy()[0]
 
         # Store top match
