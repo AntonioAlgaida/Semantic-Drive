@@ -420,6 +420,16 @@ If you use **Semantic-Drive** in your research, please cite our work:
 	eprint = {2512.12012},
 	doi = {10.48550/arXiv.2512.12012}
 }
+
+@article{Guillen-Perez2025Dec,
+	author = {Guillen-Perez, Antonio},
+	title = {{Semantic-Drive: Trustworthy and Efficient Long-Tail Data Curation via Open-Vocabulary Grounding and Neuro-Symbolic VLM Consensus}},
+	journal = {On Review},
+	year = {2026},
+	month = jan,
+}
+
+
 ```
 
 ## License
