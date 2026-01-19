@@ -1,5 +1,5 @@
 # Semantic-Drive
-**Democratizing Long-Tail Data Curation via Open-Vocabulary Grounding and Neuro-Symbolic VLM Consensus**
+**Trustworthy and Efficient Long-Tail Data Curation via Open-Vocabulary Grounding and Neuro-Symbolic VLM Consensus**
 
 <p align="center">
   This repository contains the official implementation for <strong>"Semantic-Drive"</strong>, a local-first framework designed to mine safety-critical edge cases from raw autonomous vehicle video logs using "System 2" Neuro-Symbolic reasoning.
