@@ -17,7 +17,6 @@ st.set_page_config(layout="wide", page_title="Semantic-Drive Gold Curator")
 
 # --- PATHS ---
 SOURCE_FILE = "output/consensus_final.jsonl"
-MASTER_FILE = "output/gold_annotations_master.json"
 NUSCENES_ROOT = "nuscenes_data"
 
 # --- SCHEMA DEFINITIONS ---
@@ -46,6 +45,7 @@ SCHEMA = {
 }
 
 FILTERS = {
+    "Unbiased Sample (N=200)": lambda df: df.sample(n=min(200, len(df)), random_state=42), # NEW: Fixed random sample
     "All Candidates": None,
     "High Risk (Score > 7)": lambda df: df[df['risk_score'] >= 7],
     "Construction Zones": lambda df: df[df['search_blob'].str.contains("construction|cone|drum|barrier")],
@@ -79,49 +79,64 @@ def load_candidates():
             except: pass
     return pd.DataFrame(data)
 
-def load_master():
-    if os.path.exists(MASTER_FILE):
-        with open(MASTER_FILE, 'r') as f:
+def load_master(filepath):
+    if os.path.exists(filepath):
+        with open(filepath, 'r') as f:
             return json.load(f)
     return {}
 
-def save_master(data):
-    with open(MASTER_FILE, 'w') as f:
+def save_master(data, filepath):
+    with open(filepath, 'w') as f:
         json.dump(data, f, indent=2)
 
-# --- STATE MANAGEMENT ---
-if 'idx' not in st.session_state: st.session_state.idx = 0
-if 'gold_set' not in st.session_state: st.session_state.gold_set = load_master()
+# --- SIDEBAR: NAVIGATION & MODE SELECTION ---
+st.sidebar.header("⚙️ Evaluation Mode")
+
+# --- NEW: MODE TOGGLE ---
+ui_mode = st.sidebar.radio(
+    "Select Annotation Mode:",
+    ["Standard (Verify-by-Exception)", "Blind (Unbiased Evaluation)"],
+    help="Blind mode hides the model's predictions and saves to a separate unbiased JSON file."
+)
+is_blind = "Blind" in ui_mode
+
+# Set the correct save file based on mode
+if is_blind:
+    MASTER_FILE = "output/gold_annotations_unbiased.json"
+else:
+    MASTER_FILE = "output/gold_annotations_master.json"
+
+# State Management Initialization
+if 'current_mode' not in st.session_state or st.session_state.current_mode != ui_mode:
+    st.session_state.current_mode = ui_mode
+    st.session_state.gold_set = load_master(MASTER_FILE)
+    st.session_state.idx = 0 # reset index when switching modes
+
 if 'df' not in st.session_state: st.session_state.df = load_candidates()
 if 'current_subset' not in st.session_state: st.session_state.current_subset = []
 if 'last_filter' not in st.session_state: st.session_state.last_filter = ""
 
-import random
-
-# --- SIDEBAR: NAVIGATION ---
+st.sidebar.markdown("---")
 st.sidebar.header("🔍 Dataset Navigation")
 
 # Filter dropdown (preset filters)
-filter_name = st.sidebar.selectbox("Filter Strategy", list(FILTERS.keys()))
+# Default to "Unbiased Sample" if in blind mode
+default_filter_idx = 0 if is_blind else 1
+filter_name = st.sidebar.selectbox("Filter Strategy", list(FILTERS.keys()), index=default_filter_idx)
 
 # Custom search box (persistent in session_state)
 if 'custom_query' not in st.session_state:
     st.session_state.custom_query = ""
 custom_query = st.sidebar.text_input("Custom search", value=st.session_state.custom_query)
 
-# Determine and update subset priority:
-# - If custom_query is non-empty, use it (live search)
-# - Else use selected preset filter (only update subset when filter_name changes)
+# Update subset logic
 if custom_query and custom_query.strip() != "":
-    # update session value
     st.session_state.custom_query = custom_query
-    # reset index when query changes
     if st.session_state.get('last_custom_query', None) != custom_query:
         st.session_state.idx = 0
     st.session_state.last_custom_query = custom_query
 
     q = custom_query.lower()
-    # guard against missing df
     if 'df' in st.session_state and not st.session_state.df.empty:
         matched = st.session_state.df[st.session_state.df['search_blob'].str.contains(q, na=False)]
         st.session_state.current_subset = matched.to_dict('records')
@@ -129,11 +144,9 @@ if custom_query and custom_query.strip() != "":
         st.session_state.current_subset = []
     st.session_state.last_filter = f"custom:{q}"
 else:
-    # Clear any stored custom query state if empty
     st.session_state.custom_query = ""
     st.session_state.last_custom_query = ""
 
-    # Only update when the preset filter actually changes (prevents resetting index every rerun)
     if filter_name != st.session_state.last_filter:
         st.session_state.idx = 0
         if FILTERS[filter_name]:
@@ -148,33 +161,44 @@ else:
             st.session_state.current_subset = st.session_state.df.to_dict('records') if 'df' in st.session_state else []
         st.session_state.last_filter = filter_name
 
-# Expose for main app
 subset = st.session_state.get('current_subset', [])
 total = len(subset)
 
-# Navigation buttons (prev / index display / next)
 col_nav1, col_nav2, col_nav3 = st.sidebar.columns([1, 2, 1])
 
 if total > 0:
     if col_nav1.button("⬅️"):
         st.session_state.idx = max(0, st.session_state.idx - 1)
-    col_nav2.markdown(f"**{st.session_state.idx + 1} / {total}**")
+
+    jump_idx = col_nav2.number_input(
+        "Jump to",
+        min_value=1,
+        max_value=total,
+        value=st.session_state.idx + 1,
+        step=1,
+        label_visibility="collapsed"
+    )
+
+    if jump_idx != st.session_state.idx + 1:
+        st.session_state.idx = jump_idx - 1
+        st.rerun()
+
+    col_nav2.caption(f"{jump_idx} / {total}")
+
     if col_nav3.button("➡️"):
         st.session_state.idx = min(total - 1, st.session_state.idx + 1)
+
 else:
-    # show 0/0 when empty
     col_nav2.markdown("**0 / 0**")
 
 st.sidebar.markdown("---")
-
-# Random jump
 if st.sidebar.button("🎲 Random"):
     if total > 0:
         st.session_state.idx = random.randint(0, total - 1)
         st.rerun()
 
 st.sidebar.markdown("---")
-st.sidebar.metric("Verified Frames", len(st.session_state.gold_set))
+st.sidebar.metric("Verified Frames (Current Mode)", len(st.session_state.gold_set))
 
 
 # --- MAIN UI ---
@@ -193,14 +217,26 @@ if is_verified:
     record = st.session_state.gold_set[token]
 else:
     st.info(f"⚠️ PENDING REVIEW: {token}")
-    # Default to prediction
-    record = {
-        'odd_attributes': pred.get('odd_attributes', {}),
-        'road_topology': pred.get('road_topology', {}),
-        'key_interacting_agents': pred.get('key_interacting_agents', {}),
-        'scenario_criticality': pred.get('scenario_criticality', {}),
-        'wod_e2e_tags': pred.get('wod_e2e_tags', [])
-    }
+    
+    # --- NEW: BLIND MODE LOGIC ---
+    if is_blind:
+        # Provide an empty dict so the UI defaults to standard baselines (clear, nominal, 0)
+        record = {
+            'odd_attributes': {},
+            'road_topology': {},
+            'key_interacting_agents': {},
+            'scenario_criticality': {},
+            'wod_e2e_tags': []
+        }
+    else:
+        # Default to the model's prediction (Verify-by-Exception)
+        record = {
+            'odd_attributes': pred.get('odd_attributes', {}),
+            'road_topology': pred.get('road_topology', {}),
+            'key_interacting_agents': pred.get('key_interacting_agents', {}),
+            'scenario_criticality': pred.get('scenario_criticality', {}),
+            'wod_e2e_tags': pred.get('wod_e2e_tags', [])
+        }
 
 # --- VISUALS ---
 loader = get_loader()
@@ -214,34 +250,39 @@ try:
 except Exception as e:
     st.error(f"Image Load Error: {e}")
 
-# --- REASONING CONTEXT (NEW SECTION) ---
-st.markdown("### 🧠 Model Reasoning & Verification")
-col_desc, col_log = st.columns([2, 1])
+# --- NEW: HIDE REASONING IN BLIND MODE ---
+if not is_blind:
+    st.markdown("### 🧠 Model Reasoning & Verification")
+    col_desc, col_log = st.columns([2, 1])
 
-with col_desc:
-    st.caption("Judge's Semantic Description")
-    st.info(f"\"{pred.get('description', 'No description provided.')}\"")
+    with col_desc:
+        st.caption("Judge's Semantic Description")
+        st.info(f"\"{pred.get('description', 'No description provided.')}\"")
 
-with col_log:
-    st.caption("Symbolic Verification Log (Reward System)")
-    logs = pred.get('judge_log', [])
-    score = pred.get('judge_score', 0)
-    
-    st.metric("Confidence Score", f"{score}/10")
-    
-    if logs:
-        for log in logs:
-            if "✅" in log:
-                st.markdown(f":green[{log}]")
-            elif "❌" in log:
-                st.markdown(f":red[{log}]")
-            else:
-                st.markdown(log)
-    else:
-        st.markdown("*No verification logs available.*")
+    with col_log:
+        st.caption("Symbolic Verification Log (Reward System)")
+        logs = pred.get('judge_log', [])
+        score = pred.get('judge_score', 0)
+        
+        st.metric("Confidence Score", f"{score}/10")
+        
+        if logs:
+            for log in logs:
+                if "✅" in log:
+                    st.markdown(f":green[{log}]")
+                elif "❌" in log:
+                    st.markdown(f":red[{log}]")
+                else:
+                    st.markdown(log)
+        else:
+            st.markdown("*No verification logs available.*")
+else:
+    st.markdown("### 🙈 Blind Mode Active")
+    st.info("Model predictions and reasoning logs are hidden to prevent anchoring bias. Please annotate based strictly on the visual evidence.")
+
 
 # --- ANNOTATION FORM ---
-with st.form("annotation_form"):
+with st.form(f"annotation_form_{token}"):
     st.subheader("📝 Verify Scenario DNA")
     
     tab1, tab2, tab3, tab4, tab5 = st.tabs(["A. ODD", "B. Topology", "C. Agents", "D. Causal", "E. Tags"])
@@ -260,7 +301,6 @@ with st.form("annotation_form"):
         lane = c2.selectbox("Lane Config", SCHEMA['lane_configuration'], index=SCHEMA['lane_configuration'].index(record['road_topology'].get('lane_configuration', 'straight')) if record['road_topology'].get('lane_configuration') in SCHEMA['lane_configuration'] else 0)
         drivable = st.selectbox("Drivable Status", SCHEMA['drivable_area_status'], index=SCHEMA['drivable_area_status'].index(record['road_topology'].get('drivable_area_status', 'nominal')) if record['road_topology'].get('drivable_area_status') in SCHEMA['drivable_area_status'] else 0)
         
-        # Handle Multiselect defaults safely
         def_traffic = record['road_topology'].get('traffic_controls', [])
         if not isinstance(def_traffic, list): def_traffic = []
         valid_def_traffic = [t for t in def_traffic if t in SCHEMA['traffic_controls']]
@@ -289,7 +329,6 @@ with st.form("annotation_form"):
     submitted = st.form_submit_button("💾 CONFIRM & SAVE", type="primary")
     
     if submitted:
-        # Construct Record
         new_entry = {
             "token": token,
             "odd_attributes": {
@@ -314,8 +353,8 @@ with st.form("annotation_form"):
         
         # Save to Memory
         st.session_state.gold_set[token] = new_entry
-        # Save to Disk
-        save_master(st.session_state.gold_set)
+        # Save to Disk (using dynamic MASTER_FILE)
+        save_master(st.session_state.gold_set, MASTER_FILE)
         st.success("Saved! Moving to next...")
         
         # Auto Advance
