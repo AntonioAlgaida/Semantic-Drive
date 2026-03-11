@@ -1,3 +1,5 @@
+# src/benchmark_clip.py
+
 import sys
 import os
 import json
@@ -67,6 +69,17 @@ QUERIES = {
     "animal_crossing": "animal crossing the road ahead",
 }
 
+def get_all_gold_tokens():
+    """Extracts all tokens from both gold files to ensure CLIP evaluates them."""
+    tokens = set()
+    files = ["output/gold_annotations_master.json", "output/gold_annotations_unbiased.json"]
+    for f in files:
+        if os.path.exists(f):
+            with open(f, 'r') as file:
+                data = json.load(file)
+                tokens.update(data.keys())
+    return list(tokens)
+
 def main():
     print(f"🚀 Loading CLIP ({MODEL_NAME})...")
     print(f"📂 Saving results to: {OUTPUT_FILE}")
@@ -86,22 +99,22 @@ def main():
         text_features /= text_features.norm(dim=-1, keepdim=True)
 
     try:
-        loader = NuScenesLoader(dataroot="../nuscenes_data", 
+        loader = NuScenesLoader(dataroot="nuscenes_data", 
                                 version="v1.0-trainval")
     except Exception as e:
         print(f"❌ NuScenes Loader Error: {e}")
         print("Check your config.py NUSCENES_DATAROOT path.")
         return
 
-    # Let's sample 100 random frames + your gold set if available
-    # Using a smaller subset for the benchmark speed
-    samples = loader.get_sparse_samples(frames_per_scene=3)
-    # Shuffle or just take first 200
-    target_samples = samples[:]
+    # Specifically target the tokens in the gold sets!
+    target_samples = get_all_gold_tokens()
     
+    if not target_samples:
+        print("⚠️ No gold tokens found. Falling back to random sparse sampling...")
+        target_samples = loader.get_sparse_samples(frames_per_scene=3)[:200]
+
     results = []
-    
-    print(f"📉 Benchmarking CLIP on {len(target_samples)} frames...")
+    print(f"📉 Benchmarking CLIP on {len(target_samples)} specific gold frames...")
     
     for token in tqdm(target_samples):
         # Load Images (Use Montage to give CLIP global context)

@@ -1,3 +1,5 @@
+# src/benchmark_final.py
+
 import json
 import numpy as np
 import pandas as pd
@@ -5,11 +7,18 @@ from sklearn.metrics import precision_score, recall_score, f1_score
 import os
 
 # --- CONFIGURATION ---
-GOLD_FILE = "output/gold_annotations_master.json"
+# Now we evaluate BOTH datasets automatically
+GOLD_FILES = {
+    "Stress-Test Split": "output/gold_annotations_master.json",
+    "Unbiased Blind Split": "output/gold_annotations_unbiased.json"
+}
 
 # Define your experiments here. 
 EXPERIMENTS = {
+    "Baseline: Metadata Keyword": "output/metadata_baseline.jsonl",
     "Baseline: CLIP (ViT-L/14)": "output/clip_baseline.jsonl",
+    "Baseline: Grounding DINO": "output/grounding_dino_baseline.jsonl",
+    "Baseline: OWL-v2": "output/grounding_OWLv2_baseline.jsonl",
     "Ablation: Qwen-VL (No YOLO)": "output/index_qwen3_noYOLO_run.jsonl", 
     "Single Scout: Qwen-VL + YOLO": "output/index_qwen3_run_reasoning.jsonl",
     "Single Scout: Gemma3 + YOLO": "output/index_gemma_run.jsonl",
@@ -90,7 +99,6 @@ def calculate_metrics(name, pred_file, gold_data):
     y_true = []
     y_pred = []
     risk_errors = []
-    
     common_count = 0
     
     for token, truth in gold_data.items():
@@ -100,7 +108,6 @@ def calculate_metrics(name, pred_file, gold_data):
         common_count += 1
         pred = preds_map[token]
         
-        # --- FIX: Extract Ground Truth correctly from Full Schema ---
         gt_tags_list = truth.get('wod_e2e_tags', [])
         
         # Handle cases where risk might be missing or nested
@@ -135,31 +142,36 @@ def calculate_metrics(name, pred_file, gold_data):
     }
 
 def main():
-    print("📊 Running Final Benchmark...")
+    print("📊 Running Comprehensive Benchmark...")
     
-    if not os.path.exists(GOLD_FILE):
-        print(f"❌ Critical Error: Gold file not found at {GOLD_FILE}")
-        return
-        
-    with open(GOLD_FILE, 'r') as f:
-        gold_data = json.load(f)
-    print(f"✅ Loaded {len(gold_data)} Ground Truth annotations.")
-
-    results = []
-    for name, path in EXPERIMENTS.items():
-        stats = calculate_metrics(name, path, gold_data)
-        if stats:
-            results.append(stats)
+    for split_name, gold_path in GOLD_FILES.items():
+        if not os.path.exists(gold_path):
+            print(f"⚠️ Skipping {split_name}: File not found at {gold_path}")
+            continue
             
-    if results:
-        df = pd.DataFrame(results).set_index("Method")
+        with open(gold_path, 'r') as f:
+            gold_data = json.load(f)
+            
         print("\n" + "="*80)
-        print(df[["Precision", "Recall", "F1-Score", "MAE Risk", "Samples"]].round(3))
+        print(f"🥇 SPLIT: {split_name.upper()} (N={len(gold_data)})")
         print("="*80)
-        df.to_csv("output/final_benchmark_results.csv")
-        print("✅ Saved to CSV.")
-    else:
-        print("No valid experiments found.")
+
+        results = []
+        for name, path in EXPERIMENTS.items():
+            stats = calculate_metrics(name, path, gold_data)
+            if stats:
+                results.append(stats)
+                
+        if results:
+            df = pd.DataFrame(results).set_index("Method")
+            print(df[["Precision", "Recall", "F1-Score", "MAE Risk", "Samples"]].round(3))
+            
+            # Save individual CSV for each split
+            csv_name = f"output/benchmark_results_{split_name.split()[0].lower()}.csv"
+            df.to_csv(csv_name)
+            print(f"\n✅ Saved to {csv_name}")
+        else:
+            print("No valid experiments found for this split.")
 
 if __name__ == "__main__":
     main()

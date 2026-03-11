@@ -57,21 +57,21 @@ def main():
     parser.add_argument("--n", type=int, default=3, help="Best-of-N attempts")
     args = parser.parse_args()
 
-    # ... [Rest of the file remains the same] ...
-    # (Load Data logic...)
-    
     # Intersection of tokens
     data_maps = []
     print(f"📂 Loading {len(args.files)} scout files...")
     for f in args.files:
         d = {}
         with open(f, 'r') as file:
+            print(f"   - Processing {f}...")
             for line in file:
                 try:
                     obj = json.loads(line)
-                    if obj.get('success'): 
-                        d[obj['token']] = obj
-                except: pass
+                    # if obj.get('success'): 
+                    d[obj['token']] = obj
+                except:
+                    print(f"⚠️ Skipping malformed line in {f}: {line[:100]}...")
+                    pass
         data_maps.append(d)
 
     all_tokens = set().union(*[d.keys() for d in data_maps])
@@ -82,6 +82,7 @@ def main():
     with open(args.output, 'w') as f_out:
         for token in tqdm(all_tokens):
             
+            print(f"\n🔍 Processing token: {token}")
             # 1. Aggregate Reports
             reports = []
             yolo_context = "No YOLO Data"
@@ -127,9 +128,13 @@ def main():
                     
                     score, reasons = verifier.calculate_score(candidate_json, yolo_context)
                     candidates.append({"json": candidate_json, "score": score, "reasons": reasons})
-                except: pass
+                except:
+                    print(f"⚠️ Attempt {attempt+1} for token {token} failed to produce valid JSON. Retrying...")
+                    pass
 
-            if not candidates: continue
+            if not candidates:
+                print(f"❌ All attempts failed for token {token}. Skipping...")
+                continue
 
             # 4. Pick Winner
             candidates.sort(key=lambda x: x['score'], reverse=True)

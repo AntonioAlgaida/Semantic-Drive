@@ -382,7 +382,13 @@ CUDA_VISIBLE_DEVICES=1 python -m src.main \
 ```
 
 ### 4. Run Consensus (The Judge)
-Once all scouts have finished, merge the results using the Multi-Model Judge (supporting both Local LLMs and Gemini Pro).
+Once all scouts have finished, merge the results using the Multi-Model Judge (supporting both Local LLMs and Cloud models).
+For 3 scouts (e.g., Qwen3, Kimi, Gemma):
+```bash
+python -m src.judge --files output/index_qwen3_run.jsonl output/index_kimi_run.jsonl output/index_gemma_run.jsonl --n 3
+```
+
+For 2 scouts (e.g., Qwen3 and Kimi):
 ```bash
 python -m src.judge --files output/index_kimi_run.jsonl output/index_qwen3_run.jsonl --n 3
 ```

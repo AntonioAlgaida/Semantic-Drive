@@ -54,3 +54,7 @@ output2.zip
 !output/logs_kimi_run_reasoning.jsonl
 !output/consensus_final.jsonl
 !output/gold_annotations_master.json
+!output/gold_annotations_unbiased.json
+!output/grounding_dino_baseline.jsonl
+!output/grounding_OWLv2_baseline.jsonl
+!output/consensus_only_qwen3_gemma.jsonl
