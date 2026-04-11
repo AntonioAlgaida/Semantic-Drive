@@ -2,12 +2,12 @@
 **Trustworthy and Efficient Long-Tail Data Curation via Open-Vocabulary Grounding and Neuro-Symbolic VLM Consensus**
 
 <p align="center">
-  This repository contains the official implementation for <strong>"Semantic-Drive"</strong>, a local-first framework designed to mine safety-critical edge cases from raw autonomous vehicle video logs using "System 2" Neuro-Symbolic reasoning.
+  This repository contains the official implementation for <strong>"Semantic-Drive"</strong>, a local-first framework designed to mine safety-critical edge cases from raw autonomous vehicle video logs using "System 2" neuro-symbolic reasoning.
 </p>
 
 <p align="center">
-  <a href="https://arxiv.org/abs/2512.12012" target="_blank">
-    <img src="https://img.shields.io/badge/ArXiv-Paper-b31b1b.svg?style=flat-square" alt="ArXiv Paper">
+  <a href="https://openreview.net/forum?id=qN2oN36L3k" target="_blank">
+    <img src="https://img.shields.io/badge/TMLR-Paper-b31b1b.svg?style=flat-square" alt="TMLR Paper">
   </a>
   <a href="https://huggingface.co/spaces/agnprz/Semantic-Drive-Explorer" target="_blank">
     <img src="https://img.shields.io/badge/🤗%20Hugging%20Face-Live%20Demo-yellow.svg?style=flat-square" alt="Live Demo">
@@ -42,15 +42,15 @@
 </p>
 
 ## Abstract
-**Semantic-Drive** is a privacy-preserving framework designed to mine safety-critical edge cases from raw autonomous vehicle video logs. Addressing the "Dark Data" crisis in autonomous driving, this project provides a local-first alternative to cloud-based auto-labelers. It runs entirely on consumer-grade hardware (NVIDIA RTX 3090) without transmitting data to external APIs.
+The development of Autonomous Vehicles (AVs) is currently hampered by a scarcity of long-tail training data. **Semantic-Drive** is an offline DataOps engine designed to mine safety-critical scenarios, specifically rare events like erratic jaywalking or complex construction diversions, from unlabelled data lakes. It provides an accessible and privacy-preserving alternative to cloud-based auto-labelers by running entirely on consumer-grade hardware (NVIDIA RTX 3090) without transmitting data to external APIs.
 
-The system employs a **Neuro-Symbolic Architecture** that fuses real-time object detection with the causal reasoning capabilities of Vision-Language Models (VLMs). By enforcing a strict "Scenario DNA" schema derived from the **Waymo Open Dataset for End-to-End Driving (WOD-E2E)**, Semantic-Drive transforms unstructured video into a queryable semantic database, enabling engineers to retrieve complex scenarios such as construction diversions, erratic pedestrian behavior, and sensor degradation events.
+The system employs a **Neuro-Symbolic Architecture** that separates perception into two stages: (1) Symbolic Grounding via a real-time open-vocabulary detector (YOLOE) to anchor attention, and (2) Cognitive Analysis where an ensemble of reasoning Vision-Language Models (VLMs) performs forensic scene analysis. By enforcing a strict "Scenario DNA" schema aligned with the **Waymo Open Dataset (WOD-E2E)**, Semantic-Drive transforms unstructured video into a queryable semantic database.
 
 **Key Achievements:**
-*   **High Recall:** Achieved **0.966 Recall** on safety-critical edge cases (vs. 0.475 for CLIP embeddings).
-*   **System-2 Reasoning:** Reduced Risk Assessment Error (MAE) by **51%** via Neuro-Symbolic verification.
-*   **Privacy-First:** Runs entirely on a single **NVIDIA RTX 3090** (24GB VRAM).
-*   **Cost Efficiency:** Reduces curation costs by **~97%** compared to GPT-4V/Gemini APIs.
+*   **High Recall:** It was observed that Semantic-Drive achieves a **0.966 recall** on safety-critical scenarios (vs. 0.331 for OWL-v2 and 0.271 for Grounding DINO).
+*   **Trustworthy Reasoning:** The system reduces Risk Assessment Error (MAE) by **40%** compared to single-model baselines via a multi-model consensus mechanism.
+*   **Hardware Accessible:** Designed to fit within a **24GB VRAM compute budget**, enabling local execution on a single RTX 3090.
+*   **Cost Efficiency:** A **~97% cost reduction** was estimated compared to commercial cloud APIs like GPT-4o.
 
 - [Semantic-Drive](#semantic-drive)
   - [Abstract](#abstract)
@@ -117,11 +117,7 @@ Semantic-Drive/
 
 ## Methodology: The Neuro-Symbolic Pipeline
 
-The system employs a "Judge-Scout" architecture that separates perception into three distinct stages to mitigate the hallucinations common in pure Vision-Language Models.
-
-<p align="center">
-  <img src="assets/figures/architecture_diagram.png" width="95%">
-</p>
+The system employs a "Judge-Scout" architecture that separates perception into four distinct stages to mitigate the hallucinations common in pure Vision-Language Models.
 
 ### Stage 1: Symbolic Grounding (The Eye)
 We utilize **YOLOE-11** (Real-Time Open-Vocabulary Segmentation) to perform an initial visual sweep. It detects objects from the **WOD-E2E Taxonomy** (e.g., "construction barrel", "debris") with a high-recall threshold (0.15). This "Object Inventory" is converted to text and injected into the VLM's context window.
@@ -150,26 +146,20 @@ A separate **Local LLM (Mistral-14B)** aggregates the reports from multiple scou
   <em>Figure 5: Stage 3 - Inference-Time Consensus with the Judge. The LLM aggregates multiple scout reports and selects the most consistent scenario.</em>
 </p>
 
-## Methodology
-The framework operates in four distinct phases:
-
-1.  **Symbolic Grounding (The Eye):** We utilize **YOLOE-11L** (Real-Time Open-Vocabulary Segmentation) to detect specific WOD-E2E taxonomy classes (e.g., "construction barrel", "debris") with a low confidence threshold (0.15) to maximize recall.
-2.  **Cognitive Analysis (The Brain):** A Reasoning VLM (e.g., **Qwen3-VL** or **Kimi-Thinking**) receives the images and the object inventory. It executes a Chain-of-Thought (CoT) process to verify detections ("Skepticism Policy"), assess environmental conditions (ODD), and determine the impact on the ego-vehicle's path planning.
-3.  **Inference-Time Alignment (Optimization):** To ensure logical consistency, the system generates $N$ candidate scenarios and selects the best one using a symbolic reward function that penalizes hallucinations not supported by the YOLO inventory.
-4.  **Consensus (The Judge):** A separate LLM aggregates reports from multiple scouts to resolve conflicts and finalize the semantic tags.
+### Stage 4: Symbolic Verification:
+To ensure logical consistency, the system generates $N$ candidate scenarios and selects the optimal one using a deterministic **Symbolic Reward Model** ($R(y)$) that penalizes ungrounded hallucinations.
 
 ## Key Quantitative Results
 
-We benchmarked the system against a manually verified "Gold Set" of 108 challenging frames.
+Performance was evaluated on a verified Gold Set ($N=108$) targeting rare edge cases and an Unbiased Blind Split ($N=107$) to measure average-case false positives.
 
-| Method | Precision | Recall ($\uparrow$) | F1-Score | Risk Error (MAE) $\downarrow$ |
+| Method | Prec. (Stress) | Rec. (Stress) ↑ | Risk Error (MAE) ↓ | Latency |
 | :--- | :---: | :---: | :---: | :---: |
-| **Baseline: CLIP (ViT-L/14)** | 0.683 | 0.475 | 0.560 | N/A |
-| **Ablation: Pure VLM (No YOLO)** | 0.691 | 0.814 | 0.747 | 1.389 |
-| **Single Scout: Qwen3-VL + YOLO** | 0.714 | 0.932 | 0.809 | 1.130 |
-| **Semantic-Drive (Consensus)** | **0.712** | **0.966** | **0.820** | **0.676** |
-
-
+| Metadata Search | 0.406 | 0.602 | 5.70 | 0.0s |
+| Grounding DINO | 0.182 | 0.271 | 5.70 | 0.4s |
+| OWL-v2 | 0.386 | 0.331 | 3.96 | 0.5s |
+| Single Scout (Qwen3) | 0.714 | 0.932 | 1.13 | 31.5s |
+| **Semantic-Drive (Full)** | **0.712** | **0.966** | **0.67** | **~60s** |
 
 ## Interactive Demo & Dataset
 
@@ -407,24 +397,25 @@ The system is engineered to detect specific long-tail categories defined in the 
 If you use **Semantic-Drive** in your research, please cite our work:
 
 ```bibtex
+
+@article{guillen2026semantic,
+  title={Semantic-Drive: Trustworthy and Efficient Long-Tail Data Curation via Open-Vocabulary Grounding and Neuro-Symbolic VLM Consensus},
+  author={Guillen-Perez, Antonio},
+  journal={Transactions on Machine Learning Research},
+  issn={2835-8856},
+  year={2026},
+  url={https://openreview.net/forum?id=qN2oN36L3k},
+  note={Published in TMLR (04/2026)}
+}
+
 @misc{guillen2025semanticdrive,
   author = {Guillen-Perez, Antonio},
-	title = {{Semantic-Drive: Democratizing Long-Tail Data Curation via Open-Vocabulary Grounding and Neuro-Symbolic VLM Consensus}},
+	title = {{Semantic-Drive: Trustworthy and Efficient Long-Tail Data Curation via Open-Vocabulary Grounding and Neuro-Symbolic VLM Consensus}},
   year = {2025},
 	month = dec,
   publisher = {GitHub},
   journal = {GitHub repository},
   howpublished = {\url{https://github.com/AntonioAlgaida/Semantic-Drive}}
-}
-
-@article{Guillen-Perez2025Dec,
-	author = {Guillen-Perez, Antonio},
-	title = {{Semantic-Drive: Democratizing Long-Tail Data Curation via Open-Vocabulary Grounding and Neuro-Symbolic VLM Consensus}},
-	journal = {arXiv},
-	year = {2025},
-	month = dec,
-	eprint = {2512.12012},
-	doi = {10.48550/arXiv.2512.12012}
 }
 
 @article{Guillen-Perez2025Dec,
